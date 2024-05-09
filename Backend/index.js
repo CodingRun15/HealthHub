@@ -1,11 +1,13 @@
 const express = require('express');
 const cors = require('cors');
+const bodyParser = require('body-parser');
 require("dotenv").config();
 const {Server} = require('socket.io');
 const http = require('http');
-const { run } = require('./configs/db');
+const { run, connection } = require('./configs/db');
 const { userRouter } = require('./Routers/userRouter');
 const app = express();
+// app.use(bodyParser);
 const server = http.createServer(app);
 const io = new Server(server);
 app.use(express.json());
@@ -21,8 +23,8 @@ io.on('connection', (socket) => {
 
 server.listen(process.env.PORT,async () => {
     console.log(`listening on port ${process.env.PORT}`);
-    await run();
-    console.log('database connected');
+    await connection;
+    console.log('connected to atlas')
 
 });
 
