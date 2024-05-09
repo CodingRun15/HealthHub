@@ -1,0 +1,302 @@
+/* Header Section */
+
+.header {
+    width: 100%;
+    height: 600px;
+    background-image: url('../assets/BannerNoSky.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #b7e2de;
+    text-align: center;
+}
+
+.header-content {
+    padding: 40px;
+    width: 42%;
+    margin: auto;
+}
+
+.header-content img {
+    width: 200px;
+}
+
+.header-content p {
+    color: rgb(68, 67, 67);
+    font-size: 1.2rem;
+    margin-top: 5px;
+}
+
+.header-content h1 {
+    color: rgb(32, 32, 32);
+    margin: 15px;
+}
+
+.header-content button {
+    background-color: #0eaa71;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding: 12px 15px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.header button:hover {
+    background-color: #0c9462;
+    transform: scale(1.02);
+    box-shadow: rgba(255, 255, 255, 0.027) 0px 1px 1px;
+}
+
+/* Covid Section */
+
+.covid {
+    background-color: #ffcfd4;
+    background-image: url('../assets/bg-covid.png');
+    background-position: bottom right;
+    background-repeat: no-repeat;
+    background-size: 50%;
+}
+
+.covid-content {
+    display: flex;
+    align-items: center;
+    max-width: 64em;
+    margin: auto;
+}
+
+.covid-content .text-content {
+    padding: 80px;
+}
+
+.covid-content .text-content h1 {
+    color: rgb(32, 32, 32);
+    margin: 15px 0;
+}
+
+.covid-content .text-content p {
+    color: rgb(68, 67, 67);
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+    line-height: 25px;
+}
+
+.learnMore-btn {
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding: 12px 20px;
+    color: #0098e3;
+    border: 1px solid #0098e3;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.learnMore-btn:hover {
+    background-color: rgb(214, 237, 252);
+    box-shadow: rgba(255, 255, 255, 0.027) 0px 1px 1px;
+}
+
+.covid-content .covid-vaccination img {
+    width: 400px;
+}
+
+/* MyHealth Section */
+
+.healthInfo {
+    background-color: #e4ffb4;
+    display: flex;
+    align-items: end;
+    justify-content: space-around;
+    padding: 20px 200px 0 300px;
+}
+
+.healthInfo .text-content {
+    padding: 60px;
+    width: 46%;
+}
+
+.healthInfo .text-content img:nth-child(1) {
+    margin-left: 150px;
+}
+
+.text-content h1 {
+    color: rgb(32, 32, 32);
+    margin: 15px 0;
+}
+
+.text-content p {
+    color: rgb(68, 67, 67);
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+    line-height: 25px;
+}
+
+.healthInfo .text-content .learnMore-btn {
+    margin-left: 200px;
+}
+
+.healthInfo .mobile-image img {
+    width: 250px;
+}
+
+/* Medical Record */
+
+.medicalRecord {
+    background-color: #85c2ff;
+    background-image: url('C:\Users\Pranoti\Desktop\cw\HealthHub\Frontend\HealthHubApp\src\assets\BG-WorldMap-Alpha.png');
+    background-position: top right;
+    background-repeat: no-repeat;
+    background-size: 45rem auto;
+}
+
+.medicalRecord-content {
+    display: flex;
+    align-items: center;
+    max-width: 64em;
+    margin: auto;
+    gap: 50px;
+}
+
+.medicalRecord-content .text-content {
+    padding: 80px;
+}
+
+.medicalRecord-content .text-content h1 {
+    color: rgb(32, 32, 32);
+    margin: 15px 0;
+}
+
+.medicalRecord-content .text-content p {
+    color: rgb(68, 67, 67);
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+    line-height: 25px;
+}
+
+.medicalRecord-content .patient-doctor-img img {
+    width: 400px;
+    margin-bottom: -140px;
+}
+
+/* Book Appointment Section*/
+.appointment {
+    background-color: #e5fcf0;
+    background-image: url('C:\Users\Pranoti\Desktop\cw\HealthHub\Frontend\HealthHubApp\src\assets\FindCare.png');
+    background-position: top right;
+    background-repeat: no-repeat;
+}
+
+.appointment-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.appointment-section .text-content{
+    width: 420px;
+}
+
+.appointment-section .text-content h1 {
+    color: rgb(32, 32, 32);
+    margin: 15px 0;
+}
+
+.appointment-section .text-content p {
+    color: rgb(68, 67, 67);
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+    line-height: 25px;
+}
+
+.appointment-section .schedule-app-img img {
+    width: 330px;
+}
+
+/*Connect with Doctor*/
+
+.connect-doctor {
+    background-color: #ffdbb8;
+}
+
+.connect-doctor-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.connect-doctor-section .text-content{
+    width: 420px;
+}
+
+.connect-doctor-section .text-content h1 {
+    color: rgb(32, 32, 32);
+    margin: 15px 0;
+}
+
+.connect-doctor-section .text-content p {
+    color: rgb(68, 67, 67);
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+    line-height: 25px;
+}
+
+.connect-doctor-section .connectfromwork-img img {
+    width: 330px;
+}
+
+/*footer*/
+.footer-section{
+    background-color: white;
+    padding-bottom: 20px;
+}
+.footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px;
+}
+
+.epic{
+    width: 400px;
+    text-align: center;
+} 
+.epic img{
+    width: 150px;
+}
+
+.footer-right{
+    display: flex;
+    gap: 50px;
+}
+
+.footer-right h4{
+    margin-bottom: 10px;
+}
+
+.site-map ul li{
+    list-style: none;
+    text-decoration: none;
+    color: black;
+    margin: 10px 0;
+}
+
+.site-map ul li a{
+    text-decoration: none;
+    color: black;
+}
+.getapp img{
+    width: 120px;
+}
+.privacy-policy{
+    text-align: center;
+}
+
+.privacy-policy span{
+    color: rgb(161, 10, 10);
+}
