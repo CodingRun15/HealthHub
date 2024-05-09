@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
-import logo from '../assets/logo.png';
-import '../css/Navbar.css'
+import logo from '../assets/blue-logo.png';
+import '../css/navbar.css'
 
 const Navbar = () => {
     return (
@@ -11,8 +11,7 @@ const Navbar = () => {
                 </Link>
                 <div className="menues">
                     <Link className="menu" to="/appointments">Book Appointment</Link>
-                    <Link className="menu" to="/help">Help</Link>
-                    <Link className="menu" to="/features">Features</Link>
+                    <Link className="menu" to="/dashboard">Dashboard</Link>
                     <button className="loginbtn">
                         <Link className="login-menu" to="/login">Login</Link>
                     </button>
