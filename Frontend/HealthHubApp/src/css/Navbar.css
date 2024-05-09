@@ -1,0 +1,119 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+.navbar {
+    max-width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #003a80;
+    padding: 10px 30px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo{
+    width: 80px;
+}
+
+.menues {
+    display: flex;
+    align-items: center;
+}
+
+.menu {
+    text-decoration: none;
+    color: white;
+    margin: 0 25px;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+    transition: transform 0.2s ease;
+}
+
+.menu:hover {
+    border-bottom: 2px solid white;
+    transform: scale(1.05);
+}
+
+.loginbtn {
+    background-color: #0eaa71 ;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding: 10px 55px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+.login-menu{
+    text-decoration: none;
+    color: white;
+
+}
+.loginbtn:hover {
+    background-color: #0c9462;
+    transform: scale(1.02);
+    box-shadow: rgba(255, 255, 255, 0.027) 0px 1px 1px;
+}
+
+.hamburger-btn {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: white;
+}
+@media all and (max-width:750px){
+/* navbar */
+.logo-gradient-text {
+    font-size: 1.5rem;
+}
+.loginbtn{
+    font-size: 14px;
+    padding: 8px 15px;
+    border-radius: 8px;
+}
+.menu{
+    font-size: 1rem;
+    margin: 0 10px;
+}
+
+}
+@media only screen and (max-width: 500px) {
+    .navbar{
+        padding: 6% 5%;
+    }
+    .menues {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 68px;
+        right: 0; 
+        width: 40%;
+        background-color: #7FC1B1;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        z-index: 99;
+    }
+    
+    .menu {
+        margin: 10px;
+        font-size: .9rem;
+    }
+    
+    .hamburger-btn {
+        display: block;
+    }
+
+    .loginbtn{
+        padding: -10px 5px;
+        font-size: 0.8rem;
+        border-radius: 5px;
+        margin-right: 10px;
+    }
+}
