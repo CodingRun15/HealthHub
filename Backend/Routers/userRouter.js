@@ -93,6 +93,24 @@ try{
     // }
 
   })
+  userRouter.patch('/dashboard', async (req,res)=>{
+    try{
+        const user = await userDataModel.findOne({userID:req.userID});
+        if(user){
+           
+            await user.save();
+            return res.status(200).send('Data Updated successfully');
+        }
+        else{
+            return res.status(404).send('Please login again');
+        }
+    }
+    catch(err){
+       return res.status(500).send(err);
+    }
+    // finally{
+    //    return res.redirect('/dashboard');
+  })
 
 module.exports ={
     userRouter
