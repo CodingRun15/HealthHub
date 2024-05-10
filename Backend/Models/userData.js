@@ -13,10 +13,7 @@ const userDataModel = mongoose.model('UserDataModel',{
     },
     age:Number,
     isAdmin:{type:Boolean, default:false},
-    Records:{
-        type:Array,
-        default:[]
-    } 
+    Records:{ type: mongoose.Schema.Types.ObjectId, ref: 'File' }
 });
 
 module.exports = {userDataModel};

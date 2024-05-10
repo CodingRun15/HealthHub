@@ -6,13 +6,16 @@ const {Server} = require('socket.io');
 const http = require('http');
 const { run, connection } = require('./configs/db');
 const { userRouter } = require('./Routers/userRouter');
+const { appointmentRouter } = require('./Routers/bookApp');
 const app = express();
 // app.use(bodyParser);
 const server = http.createServer(app);
 const io = new Server(server);
 app.use(express.json());
+app.use(bodyParser.json());
 app.use(cors());
 app.use('/user',userRouter);
+app.use('/user/appointments',appointmentRouter);
 app.get('/', (req, res) => {
     res.send('This is a test');
 });
