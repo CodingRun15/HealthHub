@@ -52,7 +52,7 @@ try{
        res.status(401).send('some error occurred. Please try again');   
     } 
       if(result){
-      const token = jwt.sign({userID:user._id,email:user.email},process.env.secret,({expiresIn:"1h"}))
+      const token = jwt.sign({userID:user._id,email:user.email},process.env.secret,({expiresIn:"5h"}))
       return res.status(200).json({"login successful":token});
      }
      else{
@@ -92,6 +92,24 @@ try{
     //    return res.redirect('/dashboard');
     // }
 
+  })
+  userRouter.patch('/dashboard', async (req,res)=>{
+    try{
+        const user = await userDataModel.findOne({userID:req.userID});
+        if(user){
+           
+            await user.save();
+            return res.status(200).send('Data Updated successfully');
+        }
+        else{
+            return res.status(404).send('Please login again');
+        }
+    }
+    catch(err){
+       return res.status(500).send(err);
+    }
+    // finally{
+    //    return res.redirect('/dashboard');
   })
 
 module.exports ={
