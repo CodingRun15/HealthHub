@@ -16,7 +16,7 @@ app.use(cors());
 app.use('/user',userRouter);
 app.use('/user/appointments',appointmentRouter);
 app.get('/', (req, res) => {
-    res.send("Express on Vercel");
+    res.send("Hello");
 });
 
 io.on('connection', (socket) => {
