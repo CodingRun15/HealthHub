@@ -10,33 +10,39 @@ userRouter.get('/', (req, res) => {
   res.send('This is homepage');
 });
 userRouter.post('/signup',async (req, res) => {
+   const  {password} = req.body;
+   console.log(password);
     try{
- const user = userModel.findOne({ email: req.body.email });
+ const user = await userModel.findOne({ email: req.body.email});
+//  console.log(req.body);
  if(user){
-    return res.status(400).send('User already exists. Please login');
+    console.log('user not found')
+   return res.status(400).send('User already exists. Please login');
  }
-    bcrypt.hashSync(req.body.password,5,async(err,data)=>{
-        console.log(req.body.password);
+   bcrypt.genSalt(5, (err, salt) => {
+    bcrypt.hash(password,salt,async (err,data)=>{
+        console.log(data);
         if(err){
-            return res.status(500).send(err);
+            return res.status(500).json({err:err});
         }
+        console.log(data);
         const newUser =  new userModel({
             ...req.body,password:data
         }) 
         console.log(newUser);
          try{ 
-           await  newUser.save();
+           await newUser.save();
             console.log('userSaved');
             return res.status(200).send('new User added');
          }
          catch(err){
-            res.status(404).send(err);
+           return res.status(404).send(err);
          }
     })
-      
+})  
     }
     catch(err){
-        res.status(500).send(err);
+        res.status(500).json({"message":err});
     }
 })
 
@@ -47,7 +53,7 @@ try{
     if(!user){
         return res.status(404).send('Email not registered.Please register first');
     }
-    bcrypt.compareSync(password,user.password,(err,result)=>{
+    bcrypt.compare(password,user.password,(err,result)=>{
       if(err){
        res.status(401).send('some error occurred. Please try again');   
     } 
@@ -67,7 +73,7 @@ try{
 
   userRouter.get('/dashboard',auth,async (req,res)=>{
       try{
-          const user = await UserDataModel.findOne({userID:req.userID});
+          const user = await userDataModel.findOne({userID:req.userID});
           if(user){
           return res.status(200).send(user);
           }

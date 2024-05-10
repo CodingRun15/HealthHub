@@ -11,12 +11,11 @@ const app = express();
 const server = http.createServer(app);
 const io = new Server(server);
 app.use(express.json());
-app.use(bodyParser.json());
 app.use(cors());
 app.use('/user',userRouter);
 app.use('/user/appointments',appointmentRouter);
 app.get('/', (req, res) => {
-    res.send("Hello");
+    res.send("I am live on render");
 });
 
 io.on('connection', (socket) => {
