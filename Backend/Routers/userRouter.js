@@ -1,6 +1,6 @@
 const express = require('express');
 const userRouter = express.Router();
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 const { userModel } = require('../Models/userModel');
 const jwt = require('jsonwebtoken');
 const { auth } = require('../middlewares/auth');
@@ -15,7 +15,7 @@ userRouter.post('/signup',async (req, res) => {
  if(user){
     return res.status(400).send('User already exists. Please login');
  }
-    bcrypt.hash(req.body.password,5,async(err,data)=>{
+    bcrypt.hashSync(req.body.password,5,async(err,data)=>{
         console.log(req.body.password);
         if(err){
             return res.status(500).send(err);
@@ -47,7 +47,7 @@ try{
     if(!user){
         return res.status(404).send('Email not registered.Please register first');
     }
-    bcrypt.compare(password,user.password,(err,result)=>{
+    bcrypt.compareSync(password,user.password,(err,result)=>{
       if(err){
        res.status(401).send('some error occurred. Please try again');   
     } 
