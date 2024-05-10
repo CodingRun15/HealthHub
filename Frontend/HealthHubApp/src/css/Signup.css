@@ -1,0 +1,119 @@
+.main-container-signup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 60px;
+    padding: 0;
+    font-weight: 400;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.main-container-form-signup {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    width: 80%;
+    max-width: 350px;
+    background: #ffffff;
+    border-radius: 23px;
+    box-sizing: border-box;
+    padding: 24px;
+}
+
+.form-sign-up {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+form.signup {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+h1.signup {
+    margin: 0 0 15px;
+    font-size: 28px;
+    line-height: 1.25;
+    color: #6b6b6b;
+}
+
+p.signup {
+    color: #6b6b6b;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.form-field-signup {
+    width: 90%;
+    padding: 10px;
+}
+
+input.signup,
+input.signup::placeholder {
+    font: 1rem sans-serif;
+    width: 100%; 
+}
+
+.form-button-signup {
+    border: none;
+    background-color: #1871c9;
+    color: #fff;
+    font-weight: 700;
+    font-size: 14px;
+    height: 50px;
+    border-radius: 100px;
+    cursor: pointer;
+}
+
+.form-reset-password-signup {
+    border: none;
+    background-color: #fff;
+    color: #1871c9;
+    font-weight: 700;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+hr.signup {
+    width: 100%;
+    height: 1px;
+    border: none;
+    margin-top: 18px;
+    margin-bottom: 18px;
+    background-color: #e3e5e6;
+}
+
+#signin-healthhub-signup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.signin-link-signup {
+    font-weight: 700;
+    color: #1871c9;
+    text-decoration: none;
+}
+
+/* Responsive styles */
+@media only screen and (max-width: 768px) {
+    .main-container-form-signup {
+        width: 90%;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    h1.signup {
+        font-size: 24px;
+    }
+    .form-button-signup,
+    .form-reset-password-signup {
+        width: 100%;
+    }
+    .form-field-signup {
+        width: calc(100% - 20px);
+    }
+}
