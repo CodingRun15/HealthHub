@@ -1,0 +1,117 @@
+.main-container-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    padding: 0;
+    font-weight: 400;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.main-container-form-login {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    width: 80%;
+    max-width: 400px;
+    background: #ffffff;
+    border-radius: 23px;
+    box-sizing: border-box;
+    padding: 24px;
+}
+
+.form-sign-in-login {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+form.login {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+h1.login {
+    margin: 0 0 15px;
+    font-size: 24px;
+    line-height: 1.25;
+    color: #6b6b6b;
+}
+
+p.login {
+    color: #6b6b6b;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.form-field-login {
+    width: 90%;
+    padding: 10px;
+}
+
+input.login,
+input.login::placeholder {
+    font: 1rem sans-serif;
+}
+
+.form-button-login,
+.form-reset-password-login {
+    border: none;
+    background-color: #1871c9;
+    color: #fff;
+    font-weight: 700;
+    font-size: 14px;
+    height: 50px;
+    border-radius: 100px;
+    cursor: pointer;
+}
+
+.form-reset-password-login {
+    background-color: transparent;
+    color: #1871c9;
+    height: auto;
+    margin: auto;
+}
+
+hr.login {
+    width: 100%;
+    height: 1px;
+    border: none;
+    margin-top: 18px;
+    margin-bottom: 18px;
+    background-color: #e3e5e6;
+}
+
+#signup-healthhub-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.signup-link-login {
+    font-weight: 700;
+    color: #1871c9;
+    text-decoration: none;
+}
+
+/* Responsive styles */
+@media only screen and (max-width: 768px) {
+    .main-container-form-login {
+        width: 90%;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    h1.login {
+        font-size: 20px;
+    }
+    .form-button-login,
+    .form-reset-password-login {
+        width: 100%;
+    }
+    .form-field-login {
+        width: calc(100% - 20px); 
+    }
+}
