@@ -1,19 +1,4 @@
 const mongoose = require('mongoose');
-
-const fileSchema = new mongoose.Schema({
-    fileName: {
-      type: String,
-      required: true
-    },
-    size: {
-      type: Number,
-      required: true
-    },
-    data: {
-      type: Buffer, // Use Buffer data type to store file contents
-      required: true
-    }
-  });
 const userDataModel = mongoose.model('UserDataModel',{
     userID:String,
     name:String,
@@ -28,10 +13,7 @@ const userDataModel = mongoose.model('UserDataModel',{
     },
     age:Number,
     isAdmin:{type:Boolean, default:false},
-    Records:{
-        type:[fileSchema],
-        default:[]
-    } 
+    Records:{ type: mongoose.Schema.Types.ObjectId, ref: 'File' }
 });
 
 module.exports = {userDataModel};

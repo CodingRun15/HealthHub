@@ -11,12 +11,12 @@ const auth = async (req, res, next) => {
                 })
             }
             const {userID,email} = decoded;
-            console.log(decoded);
+            // console.log(decoded);
             req.body.userID = userID;
             req.body.email = email;
-            console.log(userID,email);
             const user = await userModel.findOne({_id:userID})
-            req.id = user.userID;
+            req.id = userID;
+            // console.log(req.id);
              next();
         })
     }

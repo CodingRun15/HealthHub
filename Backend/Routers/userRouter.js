@@ -52,7 +52,7 @@ try{
        res.status(401).send('some error occurred. Please try again');   
     } 
       if(result){
-      const token = jwt.sign({userID:user._id,email:user.email},process.env.secret,({expiresIn:"1h"}))
+      const token = jwt.sign({userID:user._id,email:user.email},process.env.secret,({expiresIn:"5h"}))
       return res.status(200).json({"login successful":token});
      }
      else{

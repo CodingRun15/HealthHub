@@ -1,32 +1,13 @@
 const mongoose = require('mongoose');
-const fileSchema = new mongoose.Schema({
-    fileName: {
-      type: String,
-      required: true
-    },
-    size: {
-      type: Number,
-      required: true
-    },
-    data: {
-      type: Buffer, 
-      required: true
-    }
-  });
 const appointmentModel = mongoose.model('appointment',{
+    userID:String,
     name:String,
     age:Number,
     department:String,
     doctor:String,
-    date:Date||String,
+    date:String,
     time:String,
-    documents:{
-        type:[fileSchema],
-        default:[]
-    }
-},
-{
-    versionKey:false,
+    file:String
 })
 
 module.exports = {appointmentModel};
