@@ -1,20 +1,28 @@
-/* Header Section */
+/* Common Styles */
+.text-content p {
+    color: rgb(68, 67, 67);
+    font-size: 1.1rem;
+}
 
+.text-content h1 {
+    color: rgb(51, 50, 50);
+    margin: 10px 0;
+}
+
+/* Header Section */
 .header {
-    width: 100%;
-    height: 600px;
-    background-image: url('../assets/BannerNoSky.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-color: #b7e2de;
+    max-width: 100%;
+    background: #b7e2de url('../assets/BannerNoSky.png') no-repeat center/cover;
     text-align: center;
 }
 
 .header-content {
     padding: 40px;
-    width: 42%;
     margin: auto;
+}
+
+.header-content h1 {
+    font-size: 2rem;
 }
 
 .header-content img {
@@ -22,20 +30,14 @@
 }
 
 .header-content p {
-    color: rgb(68, 67, 67);
-    font-size: 1.2rem;
-    margin-top: 5px;
-}
-
-.header-content h1 {
-    color: rgb(32, 32, 32);
-    margin: 15px;
+    margin: 5px 0;
 }
 
 .header-content button {
     background-color: #0eaa71;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     padding: 12px 15px;
+    margin: 10px 0 20% 0;
     color: white;
     border: none;
     border-radius: 5px;
@@ -44,19 +46,72 @@
     transition: transform 0.3s ease;
 }
 
-.header button:hover {
+.header-content button:hover {
     background-color: #0c9462;
     transform: scale(1.02);
-    box-shadow: rgba(255, 255, 255, 0.027) 0px 1px 1px;
+}
+
+@media all and (max-width:840px) and (min-width:568px) {
+    .header {
+        height: 50vh;
+    }
+
+    .header-content {
+        padding: 15px;
+    }
+
+    .header-content img {
+        width: 130px;
+    }
+
+    .header-content h1 {
+        font-size: 20px;
+    }
+
+    .header-content p {
+        margin: 5px 0;
+    }
+
+    .header-content button {
+        padding: 8px 10px;
+        margin: 7px 0;
+        font-size: 1rem;
+    }
+}
+
+@media all and (max-width: 567px) {
+
+    .header-content {
+        padding: 15px 4px;
+    }
+
+    .header-content p {
+        font-size: 1rem
+    }
+
+    .header-content img {
+        width: 120px;
+    }
+
+    .header-content h1 {
+        font-size: 1.2rem;
+    }
+
+    .header-content button {
+        padding: 10px 15px;
+        margin: 10px 0 20% 0;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+    }
 }
 
 /* Covid Section */
-
 .covid {
-    background-color: #ffcfd4;
-    background-image: url('../assets/bg-covid.png');
-    background-position: bottom right;
-    background-repeat: no-repeat;
+    background: #ffcfd4 url('../assets/bg-covid.png') no-repeat bottom right;
     background-size: 50%;
 }
 
@@ -71,22 +126,11 @@
     padding: 80px;
 }
 
-.covid-content .text-content h1 {
-    color: rgb(32, 32, 32);
-    margin: 15px 0;
-}
-
-.covid-content .text-content p {
-    color: rgb(68, 67, 67);
-    font-size: 1.1rem;
-    margin-bottom: 25px;
-    line-height: 25px;
-}
-
 .learnMore-btn {
     background-color: white;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     padding: 12px 20px;
+    margin: 10px 0;
     color: #0098e3;
     border: 1px solid #0098e3;
     border-radius: 4px;
@@ -97,7 +141,6 @@
 
 .learnMore-btn:hover {
     background-color: rgb(214, 237, 252);
-    box-shadow: rgba(255, 255, 255, 0.027) 0px 1px 1px;
 }
 
 .covid-content .covid-vaccination img {
@@ -105,52 +148,113 @@
 }
 
 /* MyHealth Section */
-
 .healthInfo {
     background-color: #e4ffb4;
     display: flex;
     align-items: end;
     justify-content: space-around;
-    padding: 20px 200px 0 300px;
+    padding: 5% 5% 0 5%;
 }
 
 .healthInfo .text-content {
-    padding: 60px;
-    width: 46%;
-}
-
-.healthInfo .text-content img:nth-child(1) {
-    margin-left: 150px;
-}
-
-.text-content h1 {
-    color: rgb(32, 32, 32);
-    margin: 15px 0;
-}
-
-.text-content p {
-    color: rgb(68, 67, 67);
-    font-size: 1.1rem;
-    margin-bottom: 25px;
-    line-height: 25px;
+    padding: 4% 10%;
+    width: 50%;
 }
 
 .healthInfo .text-content .learnMore-btn {
-    margin-left: 200px;
+    margin-left: 20%;
+}
+
+.healthInfo .mobile-image {
+    width: 50%;
+    text-align: right;
+    padding-right: 10%;
+
 }
 
 .healthInfo .mobile-image img {
     width: 250px;
 }
 
-/* Medical Record */
 
+@media all and (max-width:840px) and (min-width:568px) {
+    .healthInfo {
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .healthInfo .text-content {
+        padding: 2% 3%;
+        width: 60%;
+    }
+
+    .healthInfo .mobile-image img {
+        width: 220px;
+        margin-bottom: -5px;
+    }
+
+
+    .healthInfo .text-content p {
+        font-size: 1rem
+    }
+
+    .healthInfo .text-content img {
+        width: 50px;
+    }
+
+    .healthInfo .text-content h1 {
+        font-size: 1.2rem;
+    }
+
+    .learnMore-btn {
+        padding: 8px 14px;
+        margin: 10px 0;
+        border-radius: 3px;
+        font-size: 0.9rem;
+    }
+}
+
+@media all and (max-width: 567px) {
+    .healthInfo {
+        align-items: center;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 5%;
+    }
+
+    .healthInfo .text-content {
+        padding: 1%;
+        width: 100%;
+    }
+
+    .healthInfo .mobile-image {
+        width: 100%;
+        text-align: center;
+        padding-right: 0%;
+    }
+
+    .healthInfo .mobile-image img {
+        width: 150px;
+    }
+
+    .text-content p {
+        font-size: 1.1rem;
+    }
+
+    .text-content h1 {
+        font-size: 1.4rem;
+    }
+
+    .text-content img {
+        width: 60px;
+        margin-top: 20px;
+    }
+}
+
+/* Medical Record */
 .medicalRecord {
     background-color: #85c2ff;
-    background-image: url('C:\Users\Pranoti\Desktop\cw\HealthHub\Frontend\HealthHubApp\src\assets\BG-WorldMap-Alpha.png');
-    background-position: top right;
-    background-repeat: no-repeat;
-    background-size: 45rem auto;
+    background: #85c2ff url('../assets/BG-WorldMap-Alpha.png') no-repeat top right/45rem auto;
 }
 
 .medicalRecord-content {
@@ -165,29 +269,103 @@
     padding: 80px;
 }
 
-.medicalRecord-content .text-content h1 {
-    color: rgb(32, 32, 32);
-    margin: 15px 0;
-}
-
-.medicalRecord-content .text-content p {
-    color: rgb(68, 67, 67);
-    font-size: 1.1rem;
-    margin-bottom: 25px;
-    line-height: 25px;
-}
-
 .medicalRecord-content .patient-doctor-img img {
     width: 400px;
     margin-bottom: -140px;
 }
 
+
+@media all and (max-width:840px) and (min-width:568px) {
+    .medicalRecord-content {
+        align-items: center;
+        justify-content: space-between;
+        gap: 0px;
+    }
+
+    .medicalRecord-content .text-content {
+        padding: 10px;
+        width: 50%;
+    }
+
+    .medicalRecord-content .patient-doctor-img img {
+        width: 350px;
+        margin-bottom: 10px;
+    }
+
+    .medicalRecord-content .text-content {
+        padding: 50px;
+    }
+
+    .medicalRecord-content .text-content p {
+        font-size: 1rem;
+    }
+
+    .medicalRecord-content .text-content img {
+        width: 50px;
+    }
+
+    .medicalRecord-content .text-content h1 {
+        font-size: 1.2rem;
+    }
+
+    .learnMore-btn {
+        padding: 8px 14px;
+        margin: 10px 0;
+        border-radius: 3px;
+        font-size: 0.9rem;
+    }
+
+}
+
+@media all and (max-width: 567px) {
+    .medicalRecord-content {
+        align-items: center;
+        flex-direction: column-reverse;
+        justify-content: space-between;
+        padding: 5%;
+    }
+
+    .medicalRecord-content .text-content {
+        padding: 1%;
+        width: 100%;
+    }
+
+    .medicalRecord-content .patient-doctor-img {
+        width: 100%;
+        text-align: center;
+        padding-right: 0%;
+        margin-bottom: 60px;
+    }
+
+    .medicalRecord-content .patient-doctor-img img {
+        width: 250px;
+    }
+
+    .text-content p {
+        font-size: 1.1rem;
+    }
+
+    .text-content h1 {
+        font-size: 1.4rem;
+    }
+
+    .text-content img {
+        width: 60px;
+        margin-top: 20px;
+    }
+
+    .learnMore-btn {
+        padding: 8px 14px;
+        margin: 10px 0;
+        border-radius: 3px;
+        font-size: 0.9rem;
+    }
+}
+
 /* Book Appointment Section*/
 .appointment {
     background-color: #e5fcf0;
-    background-image: url('C:\Users\Pranoti\Desktop\cw\HealthHub\Frontend\HealthHubApp\src\assets\FindCare.png');
-    background-position: top right;
-    background-repeat: no-repeat;
+    background: #e5fcf0 url('../assets/FindCare.png') no-repeat top right;
 }
 
 .appointment-section {
@@ -197,28 +375,84 @@
     gap: 50px;
 }
 
-.appointment-section .text-content{
+.appointment-section .text-content {
     width: 420px;
-}
-
-.appointment-section .text-content h1 {
-    color: rgb(32, 32, 32);
-    margin: 15px 0;
-}
-
-.appointment-section .text-content p {
-    color: rgb(68, 67, 67);
-    font-size: 1.1rem;
-    margin-bottom: 25px;
-    line-height: 25px;
 }
 
 .appointment-section .schedule-app-img img {
     width: 330px;
 }
 
-/*Connect with Doctor*/
+@media all and (max-width:1200px) and (min-width:841px) {
 
+    .appointment-section {
+        gap: 10px;
+        padding: 50px 0;
+    }
+
+    .appointment-section .schedule-app-img img {
+        width: 260px;
+    }
+
+    .patient-appointment-img img {
+        width: 320px;
+    }
+}
+
+@media all and (max-width:840px) and (min-width:568px) {
+
+    .appointment-section {
+        gap: 10px;
+        padding: 5%;
+    }
+
+    .appointment-section .schedule-app-img img {
+        width: 260px;
+    }
+
+    .patient-appointment-img img {
+        display: none;
+    }
+
+    .appointment-section .text-content p {
+        font-size: 1rem;
+    }
+
+    .appointment-section .text-content img {
+        width: 50px;
+    }
+
+    .appointment-section .text-content h1 {
+        font-size: 1.2rem;
+    }
+
+
+}
+
+@media all and (max-width: 567px) {
+
+    .appointment-section {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .appointment-section .text-content {
+        width: auto;
+        padding: 5%;
+    }
+
+    .appointment-section .schedule-app-img img {
+        width: 200px;
+    }
+
+    .patient-appointment-img img {
+        width: 250px;
+        margin-top: 50px;
+
+    }
+}
+
+/* Connect with Doctor */
 .connect-doctor {
     background-color: #ffdbb8;
 }
@@ -230,73 +464,161 @@
     gap: 50px;
 }
 
-.connect-doctor-section .text-content{
+.connect-doctor-section .text-content {
     width: 420px;
-}
-
-.connect-doctor-section .text-content h1 {
-    color: rgb(32, 32, 32);
-    margin: 15px 0;
-}
-
-.connect-doctor-section .text-content p {
-    color: rgb(68, 67, 67);
-    font-size: 1.1rem;
-    margin-bottom: 25px;
-    line-height: 25px;
 }
 
 .connect-doctor-section .connectfromwork-img img {
     width: 330px;
 }
 
-/*footer*/
-.footer-section{
+
+@media all and (max-width:1200px) and (min-width:841px) {
+
+    .connect-doctor-section {
+        gap: 5px;
+        padding: 50px 0;
+    }
+
+    .connect-doctor-section .connectfromhome-img img {
+        width: 280px;
+    }
+
+    .connect-doctor-section .connectfromwork-img img {
+        width: 280px;
+    }
+
+}
+
+@media all and (max-width:840px) and (min-width:568px) {
+
+    .connect-doctor-section {
+        gap: 10px;
+        padding: 5%;
+    }
+
+    .connect-doctor-section .connectfromhome-img img {
+        width: 280px;
+    }
+
+    .connectfromwork-img img {
+        display: none;
+    }
+
+    .connect-doctor-section .text-content p {
+        font-size: 1rem;
+    }
+
+    .connect-doctor-section .text-content img {
+        width: 50px;
+    }
+
+    .connect-doctor-section .text-content h1 {
+        font-size: 1.2rem;
+    }
+}
+
+@media all and (max-width: 567px) {
+
+    .connect-doctor-section {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .connect-doctor-section .text-content {
+        width: auto;
+        padding: 5%;
+    }
+
+    .connect-doctor-section .connectfromhome-img img {
+        width: 250px;
+        margin-top: 50px;
+    }
+
+
+    .connect-doctor-section .connectfromwork-img img {
+        width: 250px;
+        margin-top: -50px
+    }
+}
+
+/* Footer */
+.footer-section {
     background-color: white;
     padding-bottom: 20px;
 }
-.footer{
+
+.footer {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 30px;
 }
 
-.epic{
+.epic {
     width: 400px;
     text-align: center;
-} 
-.epic img{
+}
+
+.epic img {
     width: 150px;
 }
 
-.footer-right{
+.footer-right {
     display: flex;
     gap: 50px;
 }
 
-.footer-right h4{
+.footer-right h4 {
     margin-bottom: 10px;
 }
 
-.site-map ul li{
+.site-map ul li {
     list-style: none;
-    text-decoration: none;
-    color: black;
     margin: 10px 0;
 }
 
-.site-map ul li a{
+.site-map ul li a {
     text-decoration: none;
     color: black;
 }
-.getapp img{
+
+.getapp img {
     width: 120px;
 }
-.privacy-policy{
+
+.privacy-policy {
     text-align: center;
 }
 
-.privacy-policy span{
+.privacy-policy span {
     color: rgb(161, 10, 10);
+}
+
+
+@media all and (max-width:840px) and (min-width:568px) {
+    .footer {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .privacy-policy {
+        padding: 0 5%;
+    }
+
+}
+
+@media all and (max-width: 567px) {
+    .footer {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .privacy-policy {
+        padding: 0 5%;
+    }
+
+    .epic {
+        width: auto;
+    }
 }

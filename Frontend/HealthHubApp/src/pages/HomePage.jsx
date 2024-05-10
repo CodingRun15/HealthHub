@@ -7,13 +7,14 @@ const HomePage = () => {
                 <div className='header-content'>
                     <img src="\src\assets\header-logo.png" alt="HealthHub logo" />
                     <p>Your secure online health connection</p>
-                    <h1>Empowring over 185 million patients to get and stay healthy</h1>
+                    <h1>Empowring over 185 million patients <br /> to get and stay healthy</h1>
                     <button>
                         <Link className="login-menu" to="/login">Access HealthHub</Link>
                     </button>
                 </div>
             </div>
-            <div className='covid'>
+
+            {/* <div className='covid'>
                 <div className='covid-content'>
                     <div className='text-content'>
                         <img src="/src/assets/circlewithprongs.svg" alt="" />
@@ -26,7 +27,7 @@ const HomePage = () => {
                         <img src="\src\assets\covid-vaccine.png" alt="covid-vaccine" />
                     </div>
                 </div>
-            </div>
+    </div>*/}
             <div className='healthInfo'>
                 <div className='mobile-image'>
                     <img src="\src\assets\myhealth-mobileimg.png" alt="covid-vaccine" />
@@ -41,6 +42,7 @@ const HomePage = () => {
                     <button className='learnMore-btn'>Learn More</button>
                 </div>
             </div>
+
             <div className='medicalRecord'>
                 <div className='medicalRecord-content'>
                     <div className='text-content'>
@@ -56,6 +58,7 @@ const HomePage = () => {
                     </div>
                 </div>
             </div>
+
             <div className='appointment'>
                 <div className='appointment-section'>
                     <div className='patient-appointment-img'>
@@ -72,6 +75,8 @@ const HomePage = () => {
                     </div>
                 </div>
             </div>
+
+
             <div className='connect-doctor'>
                 <div className='connect-doctor-section'>
                     <div className='connectfromhome-img'>
@@ -88,29 +93,30 @@ const HomePage = () => {
                     </div>
                 </div>
             </div>
+
             <div className='footer-section'>
-            <div className='footer'>
-                <div className='epic'>
-                    <img src="\src\assets\epic-med.png" alt="" />
-                    <p>MyChart is powered by Epic, the software system used by the worlds best healthcare organizations.</p>
-                </div>
-                <div className='footer-right'>
-                    <div className='site-map'>
-                        <h4>SITE MAP</h4>
-                        <ul>
-                            <li><Link to="/login">Access HealthHub</Link></li>
-                            <li><Link to="/appointments">Book Appointment</Link></li>
-                            <li><Link to="/dashboard">Dashboard</Link></li>
-                        </ul>
+                <div className='footer'>
+                    <div className='epic'>
+                        <img src="\src\assets\epic-med.png" alt="" />
+                        <p>MyChart is powered by Epic, the software system used by the worlds best healthcare organizations.</p>
                     </div>
-                    <div className='getapp'>
-                        <h4>GET THE APP</h4>
-                        <img src="\src\assets\app-store.png" alt="" /><br />
-                        <img src="\src\assets\google-play.png" alt="" />
+                    <div className='footer-right'>
+                        <div className='site-map'>
+                            <h4>SITE MAP</h4>
+                            <ul>
+                                <li><Link to="/login">Access HealthHub</Link></li>
+                                <li><Link to="/appointments">Book Appointment</Link></li>
+                                <li><Link to="/dashboard">Dashboard</Link></li>
+                            </ul>
+                        </div>
+                        <div className='getapp'>
+                            <h4>GET THE APP</h4>
+                            <img src="\src\assets\app-store.png" alt="" /><br />
+                            <img src="\src\assets\google-play.png" alt="" />
+                        </div>
                     </div>
                 </div>
-            </div>
-            <p className='privacy-policy'><b>We use site visitor information to improve your browsing experience and this site as described in <span>our privacy policy.</span></b></p>
+                <p className='privacy-policy'><b>We use site visitor information to improve your browsing experience and this site as described in <span>our privacy policy.</span></b></p>
             </div>
         </>
     );
