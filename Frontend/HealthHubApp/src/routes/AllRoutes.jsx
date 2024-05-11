@@ -1,6 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import { BookAppointment } from "../pages/BookAppointment";
 import { Login } from "../pages/Login";
+import { Signup } from "../pages/Signup"
 import { HomePage } from "../pages/HomePage";
 import { Dashboard } from "../pages/Dashboard";
 
@@ -11,6 +12,7 @@ const AllRoutes = () => {
             <Route path="/appointments" element={<BookAppointment />} />
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<Signup />} />
         </Routes>
     );
 };
