@@ -10,7 +10,7 @@ const Login = () => {
   const handleSignIn = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch("http://localhost:6060/user/signin", {
+      const res = await fetch("https://healthhub-sug1.onrender.com/signin", {
         method: "POST",
         headers: {
           "Content-type": "application/json"
