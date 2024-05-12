@@ -12,8 +12,8 @@ const userDataModel = mongoose.model('UserDataModel',{
         country:String,
     },
     age:Number,
+    height:Number,
     isAdmin:{type:Boolean, default:false},
-    Records:{ type: mongoose.Schema.Types.ObjectId, ref: 'File' }
 });
 
 module.exports = {userDataModel};
