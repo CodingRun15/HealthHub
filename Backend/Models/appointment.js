@@ -6,7 +6,7 @@ const appointmentModel = mongoose.model('appointment',{
     department:{type:String,required:true}, 
     doctor:String,
     date:Date,
-    time:{type:Time},
+    time:String,
     file:String
 })
 module.exports = {appointmentModel};
