@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
-const logoutModel = mongoose.model('blacklist',{
+const Blacklist = mongoose.model('blacklist',{
     token:String
 });
 
 module.exports = {
-    logoutModel
+    Blacklist
 }
