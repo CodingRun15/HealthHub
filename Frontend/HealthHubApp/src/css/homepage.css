@@ -147,6 +147,80 @@
     width: 400px;
 }
 
+@media all and (max-width:840px) and (min-width:568px) {
+    .covid-content {
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .covid-content .text-content {
+        padding: 2% 3%;
+        width: 60%;
+    }
+
+    .covid-content .covid-vaccination img {
+        width: 220px;
+        margin-bottom: -5px;
+    }
+
+
+    .covid-content .text-content p {
+        font-size: 1rem
+    }
+
+    .covid-content .text-content img {
+        width: 50px;
+    }
+
+    .covid-content .text-content h1 {
+        font-size: 1.2rem;
+    }
+
+    .learnMore-btn {
+        padding: 8px 14px;
+        margin: 10px 0;
+        border-radius: 3px;
+        font-size: 0.9rem;
+    }
+}
+
+@media all and (max-width: 567px) {
+    .covid-content {
+        align-items: center;
+        flex-direction: column-reverse;
+        justify-content: space-between;
+        padding: 5%;
+    }
+
+    .covid-content .text-content {
+        padding: 1%;
+        width: 100%;
+    }
+
+    .covid-content .covid-vaccination {
+        width: 100%;
+        text-align: center;
+        padding-right: 0%;
+    }
+
+    .covid-content .covid-vaccination img {
+        width: 250px;
+    }
+
+    .text-content p {
+        font-size: 1.1rem;
+    }
+
+    .text-content h1 {
+        font-size: 1.4rem;
+    }
+
+    .text-content img {
+        width: 60px;
+        margin-top: 20px;
+    }
+}
+
 /* MyHealth Section */
 .healthInfo {
     background-color: #e4ffb4;

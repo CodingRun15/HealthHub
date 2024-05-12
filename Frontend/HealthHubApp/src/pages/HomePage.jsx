@@ -14,7 +14,7 @@ const HomePage = () => {
                 </div>
             </div>
 
-            {/* <div className='covid'>
+            <div className='covid'>
                 <div className='covid-content'>
                     <div className='text-content'>
                         <img src="/src/assets/circlewithprongs.svg" alt="" />
@@ -27,7 +27,7 @@ const HomePage = () => {
                         <img src="\src\assets\covid-vaccine.png" alt="covid-vaccine" />
                     </div>
                 </div>
-    </div>*/}
+            </div>
             <div className='healthInfo'>
                 <div className='mobile-image'>
                     <img src="\src\assets\myhealth-mobileimg.png" alt="covid-vaccine" />
