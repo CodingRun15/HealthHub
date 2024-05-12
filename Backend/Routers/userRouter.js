@@ -49,8 +49,10 @@ userRouter.post('/signup',async (req, res) => {
 
 userRouter.post('/signin', async(req, res) => {
     const {email,password} = req.body;
+    console.log(email,password);
 try{
     const user = await userModel.findOne({email:email});
+    console.log(user);
     if(!user){
         return res.status(404).send('Email not registered.Please register first');
     }
@@ -79,7 +81,7 @@ try{
                 message:"You're not logged in.Please Login"
             })
         }
-          const loggedOut = await logoutModel.findOne({token:accessToken});
+          const loggedOut = await Blacklist.findOne({token:accessToken});
           if(loggedOut){
             return res.status(401).json({
                 message:"Session expired.Please Login again"
@@ -87,16 +89,14 @@ try{
           }
           const blacklist = new Blacklist({token:accessToken});
           await blacklist.save(); 
-        //   res.setHeader('Authorization', ' ' );
           return res.status(200).json({
               message:"You have successfully logged out"
           })     
-  }
-  catch(err){
+    }
+    catch(err){
      return res.status(500).send(err);
-  }
+    }
 })
-
   userRouter.get('/dashboard',auth,async (req,res)=>{
       try{
           const user = await userDataModel.findOne({userID:req.userID});
