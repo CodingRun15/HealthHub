@@ -70,6 +70,9 @@ try{
    return res.status(500).send(err);
   }
   })
+  userRouter.post('/signout', async(req,res)=>{
+    
+  } )
 
   userRouter.get('/dashboard',auth,async (req,res)=>{
       try{
