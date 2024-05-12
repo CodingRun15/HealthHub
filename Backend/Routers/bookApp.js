@@ -4,7 +4,7 @@ const { appointmentModel } = require('../Models/appointment');
 const appointmentRouter = express.Router();
 const { upload } = require('../middlewares/upload');
 appointmentRouter.get('/', (req, res) => {
-  return res.send('Appontments page');
+  return res.json('Appontments page');
 });
 appointmentRouter.post('/bookapp',auth,upload.single('file'),async(req,res)=>{
   try{
@@ -23,7 +23,7 @@ appointmentRouter.post('/bookapp',auth,upload.single('file'),async(req,res)=>{
     // console.log(newApp);
     await newApp.save();
     // return res.redirect('/');
-    return res.status(200).send("new appointment created");
+    return res.status(200).json("new appointment created");
 }
 catch(err){
     return res.status(400).send(err);
