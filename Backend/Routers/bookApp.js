@@ -4,7 +4,6 @@ const { auth } = require('../middlewares/auth');
 const { appointmentModel } = require('../Models/appointment');
 const appointmentRouter = express.Router();
 const { upload } = require('../middlewares/upload');
-const mailer = require('nodemailer');
 const transporter = mailer.createTransport({
   host: 'smtp.ethereal.email',
   port:587,
