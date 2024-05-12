@@ -1,5 +1,5 @@
 const express = require('express');
-const nodemailer = require('nodemailer');
+const mailer = require('nodemailer');
 const { auth } = require('../middlewares/auth');
 const { appointmentModel } = require('../Models/appointment');
 const appointmentRouter = express.Router();
