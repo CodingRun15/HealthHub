@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import axios from 'axios';
 import '../css/bookAppointment.css'
-
+const token = localStorage.getItem('token');
+console.log(token);
 const BookAppointment = () => {
     const [formData, setFormData] = useState({
         name: '',
@@ -31,7 +32,13 @@ const BookAppointment = () => {
             Object.keys(formData).forEach(key => {
                 formDataToSend.append(key, formData[key]);
             });
-            const response = await axios.post('https://healthhub-sug1.onrender.com/user/appointments/bookapp', formDataToSend);
+            const response = await axios.post('https://healthhub-sug1.onrender.com/user/appointments/bookapp', formDataToSend,{
+                headers: {
+                    'Content-Type': 'multipart/form-data',
+                    'Authorization': `Bearer ${token}`
+                  }
+                }
+            );
             console.log(response.data);
             // Clear form data after successful submission
             setFormData({

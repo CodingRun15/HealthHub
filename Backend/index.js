@@ -15,7 +15,7 @@ app.use(cors());
 app.use('/user',userRouter);
 app.use('/user/appointments',appointmentRouter);
 app.get('/', (req, res) => {
-    res.send("I am live on render");
+   return res.send("I am live on render");
 });
 
 io.on('connection', (socket) => {
