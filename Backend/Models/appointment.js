@@ -1,12 +1,12 @@
 const mongoose = require('mongoose');
 const appointmentModel = mongoose.model('appointment',{
     userID:String,
-    name:String,
-    age:Number,
-    department:String,
+    name:{type:String,required:true},
+    age:{type:Number,required:true},
+    department:{type:String,required:true}, 
     doctor:String,
-    date:String,
-    time:String,
+    date:Date,
+    time:Time,
     file:String
 })
 
