@@ -9,7 +9,6 @@ const [password, setPassword] = useState("");
 const navigate = useNavigate();
 
 const handleSignUp = async () => {
-  // e.preventDefault();
   const userData = {
     name,
     email,
@@ -17,24 +16,25 @@ const handleSignUp = async () => {
   };
 
   try {
-      const res = await fetch("https://healthhub-sug1.onrender.com/user/signup", {
-        method: "POST",
-        headers: {
-          "Content-type": "application/json"
-        },
-        body: JSON.stringify(userData)
-      });
-  
-      if (res.status === 200) {
-        const data = await res.json();
-        console.log(data);
-        navigate("/login");
-      } else {
-        console.error("Error creating user:", res.statusText);
-      }
-    } catch (error) {
-      console.error("Error fetching token:", error);
+    const res = await fetch("https://healthhub-sug1.onrender.com/user/signup", {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json"
+      },
+      body: JSON.stringify(userData)
+    });
+
+    if (res.ok) { 
+      const data = await res.json();
+      console.log(data);
+      alert("User has been created successfully!");
+      navigate("/login"); 
+    } else {
+      console.error("Error creating user:", res.statusText);
     }
+  } catch (error) {
+    console.error("Error creating user:", error);
+  }
 }
 
 return (

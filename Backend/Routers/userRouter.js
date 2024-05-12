@@ -2,6 +2,7 @@ const express = require('express');
 const userRouter = express.Router();
 const bcrypt = require('bcryptjs');
 const { userModel } = require('../Models/userModel');
+const { blacklistModel } = require('../Models/blacklistModel');
 const jwt = require('jsonwebtoken');
 const { auth } = require('../middlewares/auth');
 const { userDataModel } = require('../Models/userData');
@@ -70,9 +71,33 @@ try{
    return res.status(500).send(err);
   }
   })
-  userRouter.post('/signout', async(req,res)=>{
-    
-  } )
+  userRouter.post('/signout', async (req, res) => {
+    try {
+        const token = req.headers.authorization.split(' ')[1]; 
+        if (!token) {
+            return res.status(401).send('Unauthorized');
+        }
+        await blacklistModel.create({ token });
+        return res.status(200).send('Logout successful');
+    } catch (err) {
+        console.error('Error during logout:', err);
+        return res.status(500).send('Internal Server Error');
+    }
+});
+
+  userRouter.get('/profile', auth, async (req, res) => {
+    try {
+        const user = await userDataModel.findOne({ userID: req.userID });
+        if (user) {
+            return res.status(200).send(user);
+        } else {
+            return res.status(404).send('User profile not found');
+        }
+    } catch (err) {
+        return res.status(500).send(err);
+    }
+});
+
 
   userRouter.get('/dashboard',auth,async (req,res)=>{
       try{

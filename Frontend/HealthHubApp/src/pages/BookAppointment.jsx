@@ -2,7 +2,6 @@ import { useState } from 'react';
 import axios from 'axios';
 import '../css/bookAppointment.css'
 const token = localStorage.getItem('token');
-console.log(token);
 const BookAppointment = () => {
     const [formData, setFormData] = useState({
         name: '',

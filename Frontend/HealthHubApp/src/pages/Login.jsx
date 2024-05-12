@@ -5,6 +5,7 @@ import { useState } from 'react';
 const Login = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [showPassword, setShowPassword] = useState(false);
     const navigate = useNavigate();
 
   const handleSignIn = async (e) => {
@@ -20,19 +21,30 @@ const Login = () => {
   
       if (res.ok) {
         const data = await res.json();
-        if (data["login successful"]) { // Access token correctly from the response
+        if (data["login successful"]) { 
             const token = data["login successful"];
-            console.log("Token:", token);
             localStorage.setItem("token", token);
-            alert("You have Successfully Logged In!");
-            navigate("/");
+    
+            // Fetch user information using token
+            const userRes = await fetch("https://healthhub-sug1.onrender.com/user/profile", {
+                method: "GET",
+                headers: {
+                    "Authorization": `Bearer ${token}`
+                }
+            });
+    
+            if (userRes.ok) {
+                const userData = await userRes.json();
+                localStorage.setItem("user", JSON.stringify(userData));
+                alert("You have Successfully Logged In!");
+                navigate("/");
+            } else {
+                console.error("Failed to fetch user information:", userRes.statusText);
+            }
         } else {
             alert("Token not found in response");
             console.error("Token not found in response:", data);
         }
-    } else {
-        alert("Wrong Email or Password");
-        console.error("Login failed:", res.statusText);
     }
     } catch (error) {
       console.error("Error fetching token:", error);
@@ -41,6 +53,10 @@ const Login = () => {
     setPassword("");
   }
 
+  const toggleShowPassword = () => {
+    setShowPassword(!showPassword);
+}
+
     return (
         <div className='main-container-login'>
     <div className='main-container-form-login'>
@@ -48,9 +64,9 @@ const Login = () => {
             <h1 className='login'>Sign in</h1>
             <form className='login'>
                 <input type="email" placeholder='Email address' className='form-field-login' value={email} onChange={(e)=>setEmail(e.target.value)}/>
-                <input type="password" placeholder='Password' className='form-field-login' value={password} onChange={(e)=>setPassword(e.target.value)}/>
+                <input type={showPassword ? "text" : "password"} placeholder='Password' className='form-field-login' value={password} onChange={(e) => setPassword(e.target.value)} />
                 <p className='login'>
-                    <input type="checkbox" />Show Password
+                <input type="checkbox" onChange={toggleShowPassword} checked={showPassword} />Show Password
                 </p>
                 <button className='form-button-login' onClick={handleSignIn}>Sign in</button>
                 <p className='login'>
