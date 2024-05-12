@@ -1,16 +1,16 @@
 # HealthHub
 HealthHub is a centralized health and wellness management platform designed to empower users to take charge of their health through personalized insights, health tracking, and professional consultations.
-#Objective
+# Objective
 Objective behind choosing this project was to make a scalable and robust MERN application to help user consult doctors, interact with other users on community page and track their health and fitness progress.
-#Project Type
+# Project Type
 Full Stack 
-#Backend Deployed Link
+# Backend Deployed Link
 https://healthhub-sug1.onrender.com/
-#Frontend deployed link
+# Frontend deployed link
 https://health-hub-rust.vercel.app/
-#Directory Structure
-📦 HealthHub
-├─ .gitignore
+# Directory Structure
+HealthHub
+├─.gitignore
 ├─ Backend
 │  ├─ .gitignore
 │  ├─ Models
@@ -102,7 +102,7 @@ https://health-hub-rust.vercel.app/
 │     └─ vite.config.js
 └─ README.md
 
-#Video Walkthrough of the application
+# Video Walkthrough of the application
 
 
 
@@ -112,14 +112,14 @@ https://health-hub-rust.vercel.app/
 
 
 
-#Video walkthrough of the codebase
+# Video walkthrough of the codebase
 
 
 
 
 
 
-#Features
+# Features
 Responsive and dynamic website
 User authentication and authorization
 Password hashing for security
@@ -127,12 +127,12 @@ File upload system
 Auto-email For appointments Booked
 Mongo database for reduced server load
 
-#Design Decisions or Assumption
+# Design Decisions or Assumption
 Easy registration
 Prescription upload option for repeat consultation
 Notifications for reminder
 
-#Installation
+# Installation
 cd frontend/HealthHubApp
 npm install
 npm run dev
@@ -142,7 +142,7 @@ node index.js
 This will run the server on the local host. The deployed server can be reached on https://healthhub-sug1.onrender.com/
 
 
-#Images
+# Images
 
 
 
