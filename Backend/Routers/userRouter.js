@@ -87,7 +87,6 @@ try{
           }
           const blacklist = new Blacklist({token:accessToken});
           await blacklist.save(); 
-        //   res.setHeader('Authorization', ' ' );
           return res.status(200).json({
               message:"You have successfully logged out"
           })     
@@ -120,9 +119,6 @@ try{
     catch(err){
        return res.status(500).send(err);
     }
-    // finally{
-    //    return res.redirect('/dashboard');
-    // }
 
   })
   userRouter.patch('/dashboard', async (req,res)=>{
@@ -140,8 +136,6 @@ try{
     catch(err){
        return res.status(500).send(err);
     }
-    // finally{
-    //    return res.redirect('/dashboard');
   })
 
 module.exports ={
