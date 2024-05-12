@@ -10,7 +10,7 @@ const Login = () => {
   const handleSignIn = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch("https://healthhub-sug1.onrender.com/signin", {
+      const res = await fetch("https://healthhub-sug1.onrender.com/user/signin", {
         method: "POST",
         headers: {
           "Content-type": "application/json"
@@ -20,14 +20,20 @@ const Login = () => {
   
       if (res.ok) {
         const data = await res.json();
-        console.log(data.token);
-        localStorage.setItem("token", data.token);
-        alert("You have Successfully Logged In!");
-        navigate("/");
-      } else {
+        if (data["login successful"]) { // Access token correctly from the response
+            const token = data["login successful"];
+            console.log("Token:", token);
+            localStorage.setItem("token", token);
+            alert("You have Successfully Logged In!");
+            navigate("/");
+        } else {
+            alert("Token not found in response");
+            console.error("Token not found in response:", data);
+        }
+    } else {
         alert("Wrong Email or Password");
         console.error("Login failed:", res.statusText);
-      }
+    }
     } catch (error) {
       console.error("Error fetching token:", error);
     }
