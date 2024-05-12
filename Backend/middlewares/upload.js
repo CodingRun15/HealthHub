@@ -7,8 +7,10 @@ const storage = multer.diskStorage({
     filename: function (req, file, cb) {
         let ext = path.extname(file.originalname);
         let userID = req.id;
+        let hrs = new Date().getHours();
+        let mins = new Date().getMinutes();
         // console.log(userID);
-        cb(null, userID+ext);
+        cb(null, userID+"_"+hrs+':'+mins+ext);
     },
     fileFilter: function (req, file, cb) {
         if (file.mimetype == "application/pdf") {

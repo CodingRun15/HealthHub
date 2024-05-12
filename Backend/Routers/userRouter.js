@@ -5,6 +5,7 @@ const { userModel } = require('../Models/userModel');
 const jwt = require('jsonwebtoken');
 const { auth } = require('../middlewares/auth');
 const { userDataModel } = require('../Models/userData');
+const {Blacklist } = require('../Models/blacklistModel');
 
 userRouter.get('/', (req, res) => {
   res.send('This is homepage');
@@ -71,8 +72,30 @@ try{
   }
   })
   userRouter.post('/signout', async(req,res)=>{
-    
-  } )
+    try{
+        const accessToken = req.headers["authorization"].split(" ")[1];
+        if(!accessToken){
+            return res.status(401).json({
+                message:"You're not logged in.Please Login"
+            })
+        }
+          const loggedOut = await logoutModel.findOne({token:accessToken});
+          if(loggedOut){
+            return res.status(401).json({
+                message:"Session expired.Please Login again"
+            })
+          }
+          const blacklist = new Blacklist({token:accessToken});
+          await blacklist.save(); 
+        //   res.setHeader('Authorization', ' ' );
+          return res.status(200).json({
+              message:"You have successfully logged out"
+          })     
+  }
+  catch(err){
+     return res.status(500).send(err);
+  }
+})
 
   userRouter.get('/dashboard',auth,async (req,res)=>{
       try{
