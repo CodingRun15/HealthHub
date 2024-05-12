@@ -5,8 +5,8 @@ const appointmentModel = mongoose.model('appointment',{
     age:{type:Number,required:true},
     department:{type:String,required:true}, 
     doctor:String,
-    date:String,
-    time:String,
+    date:Date,
+    time:Time,
     file:String
 })
 
