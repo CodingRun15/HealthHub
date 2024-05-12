@@ -8,8 +8,8 @@ const [email, setEmail] = useState("");
 const [password, setPassword] = useState("");
 const navigate = useNavigate();
 
-const handleSignUp = async (e) => {
-  e.preventDefault();
+const handleSignUp = async () => {
+  // e.preventDefault();
   const userData = {
     name,
     email,
@@ -17,7 +17,7 @@ const handleSignUp = async (e) => {
   };
 
   try {
-      const res = await fetch("https://healthhub-sug1.onrender.com/signup", {
+      const res = await fetch("https://healthhub-sug1.onrender.com/user/signup", {
         method: "POST",
         headers: {
           "Content-type": "application/json"

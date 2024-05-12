@@ -4,7 +4,7 @@ import { Login } from "../pages/Login";
 import { Signup } from "../pages/Signup"
 import { HomePage } from "../pages/HomePage";
 import { Dashboard } from "../pages/Dashboard";
-import { Signup } from "../pages/Signup";
+// import { Signup } from "../pages/Signup";
 
 const AllRoutes = () => {
     return (
