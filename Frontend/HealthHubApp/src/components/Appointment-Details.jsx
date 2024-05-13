@@ -13,8 +13,8 @@ const AppointmentDetails = () => {
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th>Doctor Department</th>
-                        <th>Doctor Name</th>
+                        <th>Department</th>
+                        <th>Doctor`s Name</th>
                         <th>Appointment Time</th>
                     </tr>
                 </thead>
