@@ -154,5 +154,7 @@ This will run the server on the local host. The deployed server can be reached o
 # Mock User Login credentials
 Email : "harshbaliyan2@gmail.com"
 password:"harsh1234"
+# API Endpoints
+//GET 
 
 
