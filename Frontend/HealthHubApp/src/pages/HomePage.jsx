@@ -1,20 +1,30 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import '../css/homepage.css'
 const HomePage = () => {
+    const user = JSON.parse(localStorage.getItem("user"));
+    const navigate = useNavigate();
+
+    const handleLogout = () => {
+        localStorage.removeItem("user");
+        navigate("/login");
+    };
     return (
         <>
-            <div className="header">
-                <div className='header-content'>
+            <div className="navbar">
+                <div className="navbar-content">
                     <img src="\src\assets\header-logo.png" alt="HealthHub logo" />
-                    <p>Your secure online health connection</p>
-                    <h1>Empowring over 185 million patients <br /> to get and stay healthy</h1>
-                    <button>
-                        <Link className="login-menu" to="/login">Access HealthHub</Link>
-                    </button>
+                    {user ? (
+                        <>
+                            <p>Welcome, {user.username}</p>
+                            <button onClick={handleLogout}>Logout</button>
+                        </>
+                    ) : (
+                        <Link className="login-menu" to="/login">Login</Link>
+                    )}
                 </div>
             </div>
 
-            <div className='covid'>
+            {/* <div className='covid'>
                 <div className='covid-content'>
                     <div className='text-content'>
                         <img src="/src/assets/circlewithprongs.svg" alt="" />
@@ -27,7 +37,7 @@ const HomePage = () => {
                         <img src="\src\assets\covid-vaccine.png" alt="covid-vaccine" />
                     </div>
                 </div>
-            </div>
+    </div>*/}
             <div className='healthInfo'>
                 <div className='mobile-image'>
                     <img src="\src\assets\myhealth-mobileimg.png" alt="covid-vaccine" />

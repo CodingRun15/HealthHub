@@ -1,0 +1,26 @@
+/* AppointmentDetails.css */
+.appointment-details {
+    margin-top: 20px;
+  }
+  
+  .appointment-details h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .appointment-details table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .appointment-details th,
+  .appointment-details td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .appointment-details th {
+    background-color: #f2f2f2;
+  }
+  

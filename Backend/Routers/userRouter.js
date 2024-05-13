@@ -97,6 +97,18 @@ try{
      return res.status(500).send(err);
     }
 })
+userRouter.get('/profile', auth, async (req, res) => {
+    try {
+        const user = await userDataModel.findOne({ userID: req.userID });
+        if (user) {
+            return res.status(200).send(user);
+        } else {
+            return res.status(404).send('User profile not found');
+        }
+    } catch (err) {
+        return res.status(500).send(err);
+    }
+  });
   userRouter.get('/dashboard',auth,async (req,res)=>{
       try{
           const user = await userDataModel.findOne({userID:req.userID});
@@ -120,9 +132,6 @@ try{
     catch(err){
        return res.status(500).send(err);
     }
-    // finally{
-    //    return res.redirect('/dashboard');
-    // }
 
   })
   userRouter.patch('/dashboard', async (req,res)=>{
@@ -140,8 +149,6 @@ try{
     catch(err){
        return res.status(500).send(err);
     }
-    // finally{
-    //    return res.redirect('/dashboard');
   })
 
 module.exports ={

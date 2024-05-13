@@ -1,0 +1,93 @@
+/* BarGraph.css */
+
+/* Container styles */
+.bar-chart {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Title styles */
+.bar-chart h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #333;
+    text-align: center; /* Center-align the title */
+}
+
+/* Canvas styles */
+.bar-chart canvas {
+    width: 100%;
+    height: 300px;
+    border-radius: 10px;
+}
+
+/* Tooltip styles */
+.chartjs-tooltip {
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    border-radius: 3px;
+    padding: 6px 8px;
+    font-size: 12px;
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+    z-index: 1; /* Ensure tooltip appears above bars */
+}
+
+/* Tooltip arrow */
+.chartjs-tooltip::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 5px 5px 0 5px;
+    border-color: rgba(0, 0, 0, 0.7) transparent transparent transparent;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Show tooltip on hover */
+.bar-chart:hover .chartjs-tooltip {
+    opacity: 1;
+}
+
+/* Hide tooltip by default */
+.bar-chart .chartjs-tooltip.hidden {
+    display: none;
+}
+
+/* Bar styles */
+.chartjs-bar {
+    background-color: #007bff;
+    transition: height 0.3s ease; /* Add smooth transition effect */
+}
+
+/* Hover effect for bars */
+.chartjs-bar:hover {
+    background-color: #0056b3; /* Darker shade of blue on hover */
+}
+
+/* Label styles */
+.chartjs-label {
+    font-size: 14px;
+    color: #666; /* Gray color for labels */
+    text-align: center;
+    white-space: nowrap; /* Ensure labels do not wrap */
+    overflow: hidden; /* Hide overflow text */
+    text-overflow: ellipsis; /* Add ellipsis for long labels */
+    transform: rotate(-90deg); /* Rotate labels to align horizontally */
+    transform-origin: center; /* Set rotation origin to center */
+    position: absolute; /* Position labels absolutely */
+    bottom: 0; /* Align labels to the bottom */
+    left: 50%; /* Center-align labels */
+    width: 100%; /* Ensure labels cover entire width */
+    padding: 0 10px; /* Add padding for spacing */
+}
