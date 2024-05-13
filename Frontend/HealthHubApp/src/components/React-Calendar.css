@@ -1,0 +1,36 @@
+/* calendar.css */
+
+.calendar {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.calendar th {
+    font-weight: bold;
+    text-align: center;
+    padding: 8px;
+}
+
+.calendar td {
+    text-align: center;
+    padding: 8px;
+    cursor: pointer;
+}
+
+.calendar .selected {
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 50%;
+}
+
+.calendar th:first-child,
+.calendar td:first-child {
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+.calendar th:last-child,
+.calendar td:last-child {
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
