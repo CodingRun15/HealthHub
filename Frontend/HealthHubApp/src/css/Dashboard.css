@@ -25,6 +25,11 @@
     overflow: hidden;
 }
 
+.container-user{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 /* Individual container items */
 .container-item {
     padding: 20px;

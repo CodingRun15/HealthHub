@@ -9,7 +9,6 @@ const Dashboard = () => {
     return (
         <div className="body-container-dash">
             <div className="container-dash">
-                {/* Calendar and Appointment Details */}
                 <div className="container-item">
                     <div className="container-calendar">
                         <Calendar />
@@ -19,7 +18,6 @@ const Dashboard = () => {
                     </div>
                 </div>
                 
-                {/* User Details and Bar Graph */}
                 <div className="container-item">
                     <div className="container-list">
                         <UserDetailsList />
@@ -29,7 +27,6 @@ const Dashboard = () => {
                     </div>
                 </div>
                 
-                {/* Line Graph */}
                 <div className="container-item">
                     <div className="container-line">
                         <LineGraph />

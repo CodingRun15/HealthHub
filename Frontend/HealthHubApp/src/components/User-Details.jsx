@@ -1,34 +1,34 @@
-import '../components/User-Details.css'
+import '../components/User-Details.css';
 
 const UserDetailsList = () => {
-    // Example user details list
     const userDetailsList = [
-        { id: 1, name: 'Naman Bansal', age: 25, email: 'naman@gmail.com' },
+        { name: 'Naman Bansal', age: 25, email: 'naman@gmail.com', bloodgroup: 'A+', disease: 'Low BP' },
     ];
 
     return (
         <div className="user-details-list">
-            <h2>User Details</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Name</th>
-                        <th>Age</th>
-                        <th>Email</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {userDetailsList.map(user => (
-                        <tr key={user.id}>
-                            <td>{user.id}</td>
-                            <td>{user.name}</td>
-                            <td>{user.age}</td>
-                            <td>{user.email}</td>
-                        </tr>
-                    ))}
-                </tbody>
-            </table>
+            <h2 style={{ color: '#003a80' }}>My Details</h2>
+            <div className="grid-container">
+                {userDetailsList.map(user => (
+                    <div key={user.id} className="user-details-item">
+                        <div className="detail-section">
+                            <p><span>Name:</span> {user.name}</p>
+                        </div>
+                        <div className="detail-section">
+                            <p><span>Age:</span> {user.age}</p>
+                        </div>
+                        <div className="detail-section">
+                            <p><span>Email:</span> {user.email}</p>
+                        </div>
+                        <div className="detail-section">
+                            <p><span>Blood-Group:</span> {user.bloodgroup}</p>
+                        </div>
+                        <div className="detail-section">
+                            <p><span>Disease:</span> {user.disease}</p>
+                        </div>
+                    </div>
+                ))}
+            </div>
         </div>
     );
 };

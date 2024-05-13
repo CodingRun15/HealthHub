@@ -20,8 +20,8 @@ const LineGraph = ({ numberOfAppointments }) => {
             data: {
                 labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
                 datasets: [{
-                    label: 'Appointments',
-                    data: [65, 59, 80, 81, 56, 55, 40], // Dummy data, replace with actual data
+                    label: 'Department',
+                    data: [2, 1, 3, 2, 3, 1, 1],
                     fill: false,
                     borderColor: 'rgb(75, 192, 192)',
                     tension: 0.1
@@ -29,9 +29,7 @@ const LineGraph = ({ numberOfAppointments }) => {
             }
         });
 
-        // Cleanup function
         return () => {
-            // Destroy chart instance when component unmounts
             if (chartInstance.current) {
                 chartInstance.current.destroy();
             }
@@ -40,7 +38,7 @@ const LineGraph = ({ numberOfAppointments }) => {
 
     return (
         <div className="line-graph-container">
-            <h2>Appointment Statistics</h2>
+            <h2>Department Analytics</h2>
             <p>Number of Appointments: {numberOfAppointments}</p>
             <canvas className="line-graph" ref={chartRef} />
         </div>

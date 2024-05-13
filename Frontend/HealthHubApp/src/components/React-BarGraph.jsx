@@ -18,8 +18,8 @@ const BarGraph = () => {
             data: {
                 labels: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
                 datasets: [{
-                    label: 'Appointments Count', // Updated label
-                    data: [12, 19, 3, 5, 2, 3, 8], // Updated data
+                    label: 'Appointments Count', 
+                    data: [2, 1, 3, 2, 3, 1, 1], 
                     backgroundColor: [
                         'rgba(255, 99, 132, 0.2)',
                         'rgba(54, 162, 235, 0.2)',
@@ -27,7 +27,7 @@ const BarGraph = () => {
                         'rgba(75, 192, 192, 0.2)',
                         'rgba(153, 102, 255, 0.2)',
                         'rgba(255, 159, 64, 0.2)',
-                        'rgba(255, 99, 132, 0.2)' // Example color
+                        'rgba(255, 99, 132, 0.2)' 
                     ],
                     borderColor: [
                         'rgba(255, 99, 132, 1)',
@@ -59,8 +59,8 @@ const BarGraph = () => {
 
     return (
         <div className="bar-chart">
-            <h2>Appointments Statistics</h2> {/* Updated heading */}
-            <canvas ref={chartRef}></canvas> {/* Use ref instead of id for canvas */}
+            <h2>Appointment Analysis</h2> 
+            <canvas ref={chartRef}></canvas> 
         </div>
     );
 };
