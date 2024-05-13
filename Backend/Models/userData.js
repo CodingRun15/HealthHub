@@ -13,7 +13,8 @@ const userDataModel = mongoose.model('UserDataModel',{
     },
     age:Number,
     height:Number,
-    isAdmin:{type:Boolean, default:false},
+    weight:Number,
+    bmi :Number,
 });
 
 module.exports = {userDataModel};

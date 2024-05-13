@@ -98,8 +98,9 @@ try{
     }
 })
 userRouter.get('/profile', auth, async (req, res) => {
+    console.log(req.id);
     try {
-        const user = await userDataModel.findOne({ userID: req.userID });
+        const user = await userDataModel.findOne({ userID: req.id });
         if (user) {
             return res.status(200).send(user);
         } else {
@@ -109,20 +110,20 @@ userRouter.get('/profile', auth, async (req, res) => {
         return res.status(500).send(err);
     }
   });
-  userRouter.get('/dashboard',auth,async (req,res)=>{
-      try{
-          const user = await userDataModel.findOne({userID:req.userID});
-          if(user){
-          return res.status(200).send(user);
-          }
-          else{
-              return res.status(404).send('Please login again');
-          }
-      }
-      catch(err){
-         return res.status(500).send(err);
-      }
-  })
+//   userRouter.get('/dashboard',auth,async (req,res)=>{
+//       try{
+//           const user = await userDataModel.findOne({userID:req.userID});
+//           if(user){
+//           return res.status(200).send(user);
+//           }
+//           else{
+//               return res.status(404).send('Please login again');
+//           }
+//       }
+//       catch(err){
+//          return res.status(500).send(err);
+//       }
+//   })
   userRouter.post('/dashboard',auth,async(req,res)=>{
     try{
         const userData = new userDataModel(req.body);

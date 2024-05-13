@@ -1,12 +1,18 @@
 const express = require('express');
+const mailer = require('nodemailer');
 const { auth } = require('../middlewares/auth');
 const { appointmentModel } = require('../Models/appointment');
 const appointmentRouter = express.Router();
 const { upload } = require('../middlewares/upload');
-appointmentRouter.get('/', (req, res) => {
-  return res.json('Appontments page');
-});
-appointmentRouter.post('/bookapp',auth,upload.single('file'),async(req,res)=>{
+const transporter = mailer.createTransport({
+  host: 'smtp.ethereal.email',
+  port:587,
+  auth:{
+    user:'theo26@ethereal.email',
+    pass:'X6u8nBQgn97vshnyCJ'
+  }
+}) 
+appointmentRouter.post('/bookapp',auth, upload.single('file'),async(req,res)=>{
   try{
     const newAppData = {
       userID: req.id,
@@ -18,11 +24,16 @@ appointmentRouter.post('/bookapp',auth,upload.single('file'),async(req,res)=>{
       time: req.body.time,
       file: req.file.path,
   };
-    // console.log(JSON.stringify(newAppData));
     const newApp = new appointmentModel(newAppData);
-    // console.log(newApp);
     await newApp.save();
-    // return res.redirect('/');
+    const info = transporter.sendMail({
+      from:' "HealthHub", theo26@ethereal.email',
+      to: `${req.email}`,
+      subject:'Appointment Booked',
+      text:`Appointment has been booked for ${date} at ${time}.You can access the meeting link from your app`,
+      html:'<h1>Appointment Booked</h1>'
+    })
+    console.log(info);
     return res.status(200).json("new appointment created");
 }
 catch(err){
