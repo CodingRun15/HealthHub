@@ -31,6 +31,7 @@ const BookAppointment = () => {
                 formDataToSend.append(key, formData[key]);
             });
             const response = await fetch('https://healthhub-sug1.onrender.com/user/appointments/bookapp', formDataToSend,{
+                method:'POST',
                 headers:{
                     'Content-Type':'multipart/form-data',    
                     'Authorization':`Bearer ${token}`
