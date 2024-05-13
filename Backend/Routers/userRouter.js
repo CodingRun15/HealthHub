@@ -98,7 +98,7 @@ try{
     }
 })
 userRouter.get('/profile', auth, async (req, res) => {
-    console.log(req.id);
+    // console.log(req.id);
     try {
         const user = await userDataModel.findOne({ userID: req.id });
         if (user) {

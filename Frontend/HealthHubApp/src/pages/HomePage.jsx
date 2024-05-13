@@ -12,7 +12,7 @@ const HomePage = () => {
         <>
             <div className="navbar">
                 <div className="navbar-content">
-                    <img src="\src\assets\header-logo.png" alt="HealthHub logo" />
+                    <img src="./public/header-logo.png" alt="HealthHub logo" />
                     {user ? (
                         <>
                             <p>Welcome, {user.username}</p>
@@ -40,12 +40,12 @@ const HomePage = () => {
     </div>*/}
             <div className='healthInfo'>
                 <div className='mobile-image'>
-                    <img src="\src\assets\myhealth-mobileimg.png" alt="covid-vaccine" />
+                    <img src="./public/myhealth-mobileimg.png" alt="covid-vaccine" />
                 </div>
                 <div className='text-content'>
-                    <img src="/src/assets/beaker.png" alt="" />
-                    <img src="/src/assets/medications.png" alt="" />
-                    <img src="/src/assets/note.png" alt="" />
+                    <img src="./public/beaker.png" alt="" />
+                    <img src="./public/medications.png" alt="" />
+                    <img src="./public/note.png" alt="" />
                     <h1>All your health information
                         in one place</h1>
                     <p>See your medications, test results, upcoming appointments, medical bills, price estimates, and more all in one place, even if you have been seen at multiple healthcare organizations.</p>
@@ -56,15 +56,15 @@ const HomePage = () => {
             <div className='medicalRecord'>
                 <div className='medicalRecord-content'>
                     <div className='text-content'>
-                        <img src="\src\assets\chart.png" alt="" />
-                        <img src="\src\assets\clipboard.png" alt="" />
-                        <img src="\src\assets\health_card.png" alt="" />
+                        <img src="./public/chart.png" alt="" />
+                        <img src="./public/clipboard.png" alt="" />
+                        <img src="./public/health_card.png" alt="" />
                         <h1>Share your medical record safely and securely</h1>
                         <p>Share your medical record with anyone who needs it. Most of your healthcare providers can already get the information they need, but if they cannot, you have the power to share your record on the spot.</p>
                         <button className='learnMore-btn'>Learn More</button>
                     </div>
                     <div className='patient-doctor-img'>
-                        <img src="\src\assets\Patient-BG-Providers.png" alt="covid-vaccine" />
+                        <img src="./public/Patient-BG-Providers.png" alt="covid-vaccine" />
                     </div>
                 </div>
             </div>
@@ -72,16 +72,16 @@ const HomePage = () => {
             <div className='appointment'>
                 <div className='appointment-section'>
                     <div className='patient-appointment-img'>
-                        <img src="\src\assets\FindCareUser.png" alt="" />
+                        <img src="./public/FindCareUser.png" alt="" />
                     </div>
                     <div className='text-content'>
-                        <img src="\src\assets\map.png" alt="" />
-                        <img src="\src\assets\calendar.png" alt="" />
+                        <img src="./public/map.png" alt="" />
+                        <img src="./public/calendar.png" alt="" />
                         <h1>Quickly schedule appointments and find care</h1>
                         <p>Make appointments at your convenience, complete pre-visit tasks from home, and find the nearest urgent care or emergency room when you need it.</p>
                     </div>
                     <div className='schedule-app-img'>
-                        <img src="\src\assets\FindCareDevice.png" alt="FindCareDevice" />
+                        <img src="./public/FindCareDevice.png" alt="FindCareDevice" />
                     </div>
                 </div>
             </div>
@@ -90,16 +90,16 @@ const HomePage = () => {
             <div className='connect-doctor'>
                 <div className='connect-doctor-section'>
                     <div className='connectfromhome-img'>
-                        <img src="\src\assets\ConnectFromHome.png" alt="" />
+                        <img src="./public/ConnectFromHome.png" alt="" />
                     </div>
                     <div className='text-content'>
-                        <img src="\src\assets\doctor.png" alt="" />
-                        <img src="\src\assets\speech_bubble_with_video.png" alt="" />
+                        <img src="./public/doctor.png" alt="" />
+                        <img src="./public/speech_bubble_with_video.png" alt="" />
                         <h1>Connect with a doctor no matter where you are</h1>
                         <p>Send a message, get online diagnosis and treatment, talk face-to-face over video, or arrange to follow up with a doctor in person, depending on the level of care you need.</p>
                     </div>
                     <div className='connectfromwork-img'>
-                        <img src="\src\assets\ConnectFromWork.png" alt="FindCareDevice" />
+                        <img src="./public/ConnectFromWork.png" alt="FindCareDevice" />
                     </div>
                 </div>
             </div>
@@ -107,7 +107,7 @@ const HomePage = () => {
             <div className='footer-section'>
                 <div className='footer'>
                     <div className='epic'>
-                        <img src="\src\assets\epic-med.png" alt="" />
+                        <img src="./public/epic-med.png" alt="" />
                         <p>MyChart is powered by Epic, the software system used by the worlds best healthcare organizations.</p>
                     </div>
                     <div className='footer-right'>
@@ -121,8 +121,8 @@ const HomePage = () => {
                         </div>
                         <div className='getapp'>
                             <h4>GET THE APP</h4>
-                            <img src="\src\assets\app-store.png" alt="" /><br />
-                            <img src="\src\assets\google-play.png" alt="" />
+                            <img src="./public/app-store.png" alt="" /><br />
+                            <img src="./public/google-play.png" alt="" />
                         </div>
                     </div>
                 </div>

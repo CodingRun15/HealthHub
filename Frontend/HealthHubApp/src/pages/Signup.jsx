@@ -20,7 +20,7 @@ const handleSignUp = async () => {
       const res = await fetch("https://healthhub-sug1.onrender.com/user/signup", {
         method: "POST",
         headers: {
-          "Content-type": "application/json"
+          "Content-Type": "application/json"
         },
         body: JSON.stringify(userData)
       });

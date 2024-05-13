@@ -117,7 +117,7 @@ const BookAppointment = () => {
     return (
         <div className='main'>
             <div className='appointment-img'>
-                <img src="/src/assets/appointment.jpg" alt="Appointment" />
+                <img src="./public/appointment.jpg" alt="Appointment" />
             </div>
             <div className='appointment-form'>
                 <h2>Make your Appointment</h2>
