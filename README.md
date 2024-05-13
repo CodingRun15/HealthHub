@@ -156,5 +156,18 @@ Email : "harshbaliyan2@gmail.com"
 password:"harsh1234"
 # API Endpoints
 //GET 
+https://health-hub-rust.vercel.app/              //homepage
+//POST for signup
+https://health-hub-rust.vercel.app/user/signup 
+//POST for signin
+https://health-hub-rust.vercel.app/user/signin
+//POST for signout
+https://health-hub-rust.vercel.app/user/signout
+//GET dashboard
+https://health-hub-rust.vercel.app/user/profile
+//POST appointments
+https://health-hub-rust.vercel.app/user/appointments/bookapp
+
+
 
 
