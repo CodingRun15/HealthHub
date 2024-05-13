@@ -2,7 +2,7 @@ import '../components/User-Details.css';
 
 const UserDetailsList = () => {
     const userDetailsList = [
-        { name: 'Naman Bansal', age: 25, email: 'naman@gmail.com', bloodgroup: 'A+', disease: 'Low BP' },
+        { name: 'Harsh Kumar', age: 25, email: 'harshbaliyan2@gmail.com', bloodgroup: 'A+', disease: 'Low BP' },
     ];
 
     return (
