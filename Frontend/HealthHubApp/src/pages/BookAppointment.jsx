@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import axios from 'axios';
 import '../css/bookAppointment.css';
-
 const token = localStorage.getItem('token');
 const initialState = {
     name: '',
@@ -19,7 +18,6 @@ function getCurrentDate() {
     const day = today.getDate().toString().padStart(2, '0');
     return `${year}-${month}-${day}`;
 }
-
 const BookAppointment = () => {
     const [formData, setFormData] = useState(initialState);
     const [selectedDepartment, setSelectedDepartment] = useState("");
@@ -113,7 +111,6 @@ const BookAppointment = () => {
             console.error('Error submitting appointment:', error);
         }
     };
-
     return (
         <div className='main'>
             <div className='appointment-img'>
