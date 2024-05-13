@@ -152,7 +152,7 @@ This will run the server on the local host. The deployed server can be reached o
 ![WhatsApp Image 2024-05-13 at 5 08 51 PM (2)](https://github.com/CodingRun15/HealthHub/assets/154725027/024461f5-2de3-4276-8db5-96a59b7aaeb1)
 
 # Mock User Login credentials
-Email : "harshbaliyan2@gmail.com"
+Email : "harshbaliyan2@gmail.com" \n  /n
 password:"harsh1234"
 # API Endpoints
 //GET 
