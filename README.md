@@ -157,27 +157,27 @@ password:"harsh1234"
 # API Endpoints
 //GET 
 https://health-hub-rust.vercel.app/ </br> 
-POST for signup/
-https://health-hub-rust.vercel.app/user/signup /
-//POST for signin
-https://health-hub-rust.vercel.app/user/signin /
-//POST for signout
-https://health-hub-rust.vercel.app/user/signout /
-//GET dashboard
-https://health-hub-rust.vercel.app/user/profile /
-//POST appointments/
-https://health-hub-rust.vercel.app/user/appointments/bookapp /
+POST for signup </br> 
+https://health-hub-rust.vercel.app/user/signup  </br> 
+//POST for signin </br> 
+https://health-hub-rust.vercel.app/user/signin  </br> 
+//POST for signout  </br> 
+https://health-hub-rust.vercel.app/user/signout  </br> 
+//GET dashboard  </br> 
+https://health-hub-rust.vercel.app/user/profile  </br> 
+//POST appointments  </br> 
+https://health-hub-rust.vercel.app/user/appointments/bookapp  </br> 
 # Tech Stack
 # Frontend: 
 React.JS 
 # Backend : 
-Server : Express.js/
-Environment : Node.js/
-Authentication : Jsonwebtoken/
-Hashing : bcrypt/
-Logger : winston/
-File System : Multer/
-DataBase : mongodb atlas/
+Server : Express.js  </br> 
+Environment : Node.js  </br> 
+Authentication : Jsonwebtoken  </br> 
+Hashing : bcrypt  </br> 
+Logger : winston  </br> 
+File System : Multer  </br> 
+DataBase : mongodb atlas  </br> 
 
 
 
