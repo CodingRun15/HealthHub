@@ -1,30 +1,20 @@
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import '../css/homepage.css'
 const HomePage = () => {
-    const user = JSON.parse(localStorage.getItem("user"));
-    const navigate = useNavigate();
-
-    const handleLogout = () => {
-        localStorage.removeItem("user");
-        navigate("/login");
-    };
     return (
         <>
-            <div className="navbar">
-                <div className="navbar-content">
-                    <img src="./src/assets/header-logo.png" alt="HealthHub logo" />
-                    {user ? (
-                        <>
-                            <p>Welcome, {user.username}</p>
-                            <button onClick={handleLogout}>Logout</button>
-                        </>
-                    ) : (
-                        <Link className="login-menu" to="/login">Login</Link>
-                    )}
+            <div className="header">
+                <div className='header-content'>
+                    <img src="\src\assets\header-logo.png" alt="HealthHub logo" />
+                    <p>Your secure online health connection</p>
+                    <h1>Empowering over 185 million patients <br /> to get and stay healthy</h1>
+                    <button>
+                        <Link className="login-menu" to="/login">Access HealthHub</Link>
+                    </button>
                 </div>
             </div>
 
-            {/* <div className='covid'>
+            <div className='covid'>
                 <div className='covid-content'>
                     <div className='text-content'>
                         <img src="/src/assets/circlewithprongs.svg" alt="" />
@@ -34,10 +24,10 @@ const HomePage = () => {
                         <button className='learnMore-btn'>Learn More</button>
                     </div>
                     <div className='covid-vaccination'>
-                        <img src="\src\assets\covid-vaccine.png" alt="covid-vaccine" />
+                        <img src="\src\assets\vaccine-hero.png" alt="covid-vaccine" />
                     </div>
                 </div>
-    </div>*/}
+            </div>
             <div className='healthInfo'>
                 <div className='mobile-image'>
                     <img src="\src\assets\myhealth-mobileimg.png" alt="covid-vaccine" />
@@ -107,8 +97,8 @@ const HomePage = () => {
             <div className='footer-section'>
                 <div className='footer'>
                     <div className='epic'>
-                        <img src="\src\assets\epic-med.png" alt="" />
-                        <p>MyChart is powered by Epic, the software system used by the worlds best healthcare organizations.</p>
+                        <img src="\src\assets\header-logo.png" alt="" />
+                        <p>Empowering users with personalized health insights, tracking, and consultations.</p>
                     </div>
                     <div className='footer-right'>
                         <div className='site-map'>
@@ -119,11 +109,11 @@ const HomePage = () => {
                                 <li><Link to="/dashboard">Dashboard</Link></li>
                             </ul>
                         </div>
-                        <div className='getapp'>
+                        {/* <div className='getapp'>
                             <h4>GET THE APP</h4>
                             <img src="\src\assets\app-store.png" alt="" /><br />
                             <img src="\src\assets\google-play.png" alt="" />
-                        </div>
+                        </div> */}
                     </div>
                 </div>
                 <p className='privacy-policy'><b>We use site visitor information to improve your browsing experience and this site as described in <span>our privacy policy.</span></b></p>

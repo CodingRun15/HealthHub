@@ -3,7 +3,7 @@ import '../components/User-Details.css'
 const UserDetailsList = () => {
     // Example user details list
     const userDetailsList = [
-        { id: 1, name: 'Naman Bansal', age: 25, email: 'naman@example.com' },
+        { id: 1, name: 'Naman Bansal', age: 25, email: 'naman@gmail.com' },
     ];
 
     return (

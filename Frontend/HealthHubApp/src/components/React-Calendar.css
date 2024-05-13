@@ -1,8 +1,14 @@
 /* calendar.css */
-
+.container-calendar h2{
+    color: #003a80;
+}
 .calendar {
-    width: 100%;
-    border-collapse: collapse;
+    width: 80%;
+    border: 2px solid #003a80;
+    border-radius: 5px;
+    padding: 20px;
+    margin-top: 20px;
+    /* border-collapse: collapse; */
 }
 
 .calendar th {
@@ -11,14 +17,15 @@
     padding: 8px;
 }
 
+
 .calendar td {
     text-align: center;
-    padding: 8px;
+    padding: 13px;
     cursor: pointer;
 }
 
 .calendar .selected {
-    background-color: #007bff;
+    background-color: #003a80;
     color: #fff;
     border-radius: 50%;
 }
