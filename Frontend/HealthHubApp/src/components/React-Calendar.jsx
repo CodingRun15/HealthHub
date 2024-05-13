@@ -73,7 +73,7 @@ const Calendar = () => {
 
     return (
         <div className="container-calendar">
-            <h3>Appointment Calendar</h3>
+            <h2>Appointment Calendar</h2>
             {renderCalendar()}
         </div>
     );

@@ -3,20 +3,26 @@
 }
 
 .user-details-list h2 {
-    font-size: 20px;
-    margin-bottom: 10px;
+    color: #003a80;
+    margin-bottom: 20px;
+    text-align: center;
 }
 
 .user-details-list table {
     width: 100%;
     border-collapse: collapse;
 }
-
+.user-details-list th{
+    color: #003a80;
+    text-align: center;
+}
 .user-details-list th,
 .user-details-list td {
     padding: 8px;
     border: 1px solid #ddd;
     text-align: left;
+    font-size: 14px;
+
 }
 
 .user-details-list th {
