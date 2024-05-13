@@ -1,0 +1,44 @@
+
+  
+  .modal {
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    width: 300px;
+    height: 400px;
+    position: fixed;
+    top: 40%;
+    left: 75%;
+  }
+  
+  .close-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    top: 0px;
+    left: 90%;
+  }
+  
+  .chatbot-frame {
+    width: 300px;
+    height: 400px;
+  }
+  .chatbot-button{
+    background-image: url('../assets/chatbot.png');
+    background-position: center;
+    background-size: cover;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    position: fixed;
+    top: 85%;
+    left: 90%;
+    right: 10%;
+  }
+  .chatbot-button:hover{
+   transform: scale(1.5);
+   transition: ease-in-out;
+  }
+  
