@@ -167,6 +167,17 @@ https://health-hub-rust.vercel.app/user/signout
 https://health-hub-rust.vercel.app/user/profile
 //POST appointments
 https://health-hub-rust.vercel.app/user/appointments/bookapp
+# Tech Stack
+# Frontend: 
+React.JS 
+# Backend : 
+Server : Express.js
+Environment : Node.js
+Authentication : Jsonwebtoken
+Hashing : bcrypt
+Logger : winston
+File System : Multer
+DataBase : mongodb atlas
 
 
 
