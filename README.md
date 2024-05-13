@@ -152,32 +152,32 @@ This will run the server on the local host. The deployed server can be reached o
 ![WhatsApp Image 2024-05-13 at 5 08 51 PM (2)](https://github.com/CodingRun15/HealthHub/assets/154725027/024461f5-2de3-4276-8db5-96a59b7aaeb1)
 
 # Mock User Login credentials
-Email : "harshbaliyan2@gmail.com" \n  /n
+Email : "harshbaliyan2@gmail.com"/
 password:"harsh1234"
 # API Endpoints
 //GET 
-https://health-hub-rust.vercel.app/              //homepage
-//POST for signup
-https://health-hub-rust.vercel.app/user/signup 
+https://health-hub-rust.vercel.app/ </br> 
+POST for signup/
+https://health-hub-rust.vercel.app/user/signup /
 //POST for signin
-https://health-hub-rust.vercel.app/user/signin
+https://health-hub-rust.vercel.app/user/signin /
 //POST for signout
-https://health-hub-rust.vercel.app/user/signout
+https://health-hub-rust.vercel.app/user/signout /
 //GET dashboard
-https://health-hub-rust.vercel.app/user/profile
-//POST appointments
-https://health-hub-rust.vercel.app/user/appointments/bookapp
+https://health-hub-rust.vercel.app/user/profile /
+//POST appointments/
+https://health-hub-rust.vercel.app/user/appointments/bookapp /
 # Tech Stack
 # Frontend: 
 React.JS 
 # Backend : 
-Server : Express.js
-Environment : Node.js
-Authentication : Jsonwebtoken
-Hashing : bcrypt
-Logger : winston
-File System : Multer
-DataBase : mongodb atlas
+Server : Express.js/
+Environment : Node.js/
+Authentication : Jsonwebtoken/
+Hashing : bcrypt/
+Logger : winston/
+File System : Multer/
+DataBase : mongodb atlas/
 
 
 
