@@ -12,7 +12,7 @@
 /* Header Section */
 .header {
     max-width: 100%;
-    background: #b7e2de url('./public/BannerNoSky.png') no-repeat center/cover;
+    background: #b7e2de url('C:\Users\nmnba\OneDrive\Desktop\HealthHub Main\HealthHub\Frontend\HealthHubApp\src\assets\BannerNoSky.png') no-repeat center/cover;
     text-align: center;
 }
 

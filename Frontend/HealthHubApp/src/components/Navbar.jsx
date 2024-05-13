@@ -28,8 +28,10 @@ const Navbar = () => {
                     <Link className="menu" to="/dashboard">Dashboard</Link>
                     {user ? (
                         <>
-                            <p>Welcome, {user.username}</p>
+                            <div style={{display:'flex', justifyContent:'center',alignItems:'center', gap:'10px'}}>
+                            <h2>Welcome, {user.username}</h2>
                             <button className="loginbtn" onClick={handleLogout}>Logout</button>
+                            </div>
                         </>
                     ) : (
                         <button className="loginbtn">
