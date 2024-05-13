@@ -29,7 +29,7 @@ const Navbar = () => {
                     {user ? (
                         <>
                             <div style={{display:'flex', justifyContent:'center',alignItems:'center', gap:'10px'}}>
-                            <h2>Welcome, {user.username}</h2>
+                            <p style={{color:'white', fontSize:'18px'}}>Welcome, {user.name}</p>
                             <button className="loginbtn" onClick={handleLogout}>Logout</button>
                             </div>
                         </>
