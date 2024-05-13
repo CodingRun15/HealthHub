@@ -12,7 +12,7 @@ const transporter = mailer.createTransport({
     pass:'X6u8nBQgn97vshnyCJ'
   }
 }) 
-appointmentRouter.post('/bookapp',auth,upload.single('file'),async(req,res)=>{
+appointmentRouter.post('/bookapp',auth, upload.single('file'),async(req,res)=>{
   try{
     const newAppData = {
       userID: req.id,
@@ -33,8 +33,8 @@ appointmentRouter.post('/bookapp',auth,upload.single('file'),async(req,res)=>{
       text:`Appointment has been booked for ${date} at ${time}.You can access the meeting link from your app`,
       html:'<h1>Appointment Booked</h1>'
     })
+    console.log(info);
     return res.status(200).json("new appointment created");
-
 }
 catch(err){
     return res.status(400).send(err);

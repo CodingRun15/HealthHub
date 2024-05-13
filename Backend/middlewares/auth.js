@@ -17,6 +17,7 @@ const auth = async (req, res, next) => {
             const user = await userModel.findOne({_id:userID})
             req.id = userID;
             req.email = email;
+            console.log(user);
             // console.log(req.id);
              next();
         })
