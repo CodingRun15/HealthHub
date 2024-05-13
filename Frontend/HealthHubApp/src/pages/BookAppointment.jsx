@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import '../css/bookAppointment.css'
-
+const token = localStorage.getItem('token');
 const BookAppointment = () => {
     const [formData, setFormData] = useState({
         name: '',
@@ -30,8 +30,15 @@ const BookAppointment = () => {
             Object.keys(formData).forEach(key => {
                 formDataToSend.append(key, formData[key]);
             });
-            const response = await fetch('https://healthhub-sug1.onrender.com/user/appointments/bookapp', formDataToSend);
+            const response = await fetch('https://healthhub-sug1.onrender.com/user/appointments/bookapp', formDataToSend,{
+                headers:{
+                    'Content-Type':'multipart/form-data',    
+                    'Authorization':`Bearer ${token}`
+                }
+            });
             // Clear form data after successful submission
+            const data = response.json();
+            alert(JSON.stringify(data));
             setFormData({
                 name: '',
                 age: '',
