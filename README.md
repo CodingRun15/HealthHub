@@ -122,17 +122,17 @@ https://health-hub-rust.vercel.app/
 
 
 # Features
-Responsive and dynamic website
-User authentication and authorization
-Password hashing for security
-File upload system
-Auto-email For appointments Booked
-Mongo database for reduced server load
+1. Responsive and dynamic website
+2. User authentication and authorization
+3. Password hashing for security
+4. File upload system
+5. Auto-email For appointments Booked
+6. Mongo database for reduced server load
 
 # Design Decisions or Assumption
-Easy registration
-Prescription upload option for repeat consultation
-Notifications for reminder
+1. Easy registration
+2. Prescription upload option for repeat consultation
+3. Notifications for reminder
 
 # Installation
 cd frontend/HealthHubApp
