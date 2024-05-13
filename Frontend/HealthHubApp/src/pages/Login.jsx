@@ -26,7 +26,6 @@ const Login = () => {
             localStorage.setItem("token", token);
     
             const userRes = await fetch("https://healthhub-sug1.onrender.com/user/profile", {
-                method: "GET",
                 headers: {
                     "Authorization": `Bearer ${token}`
                 }
