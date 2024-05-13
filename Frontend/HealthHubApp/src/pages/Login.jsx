@@ -25,7 +25,6 @@ const Login = () => {
             const token = data["login successful"];
             localStorage.setItem("token", token);
     
-            // Fetch user information using token
             const userRes = await fetch("https://healthhub-sug1.onrender.com/user/profile", {
                 method: "GET",
                 headers: {

@@ -5,9 +5,7 @@ const HomePage = () => {
     const navigate = useNavigate();
 
     const handleLogout = () => {
-        // Clear user information from local storage
         localStorage.removeItem("user");
-        // Redirect to the login page
         navigate("/login");
     };
     return (
