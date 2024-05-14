@@ -16,5 +16,4 @@ const AllRoutes = () => {
         </Routes>
     );
 };
-
 export { AllRoutes };

@@ -11,7 +11,7 @@ userRouter.get('/', (req, res) => {
   res.send('This is homepage');
 });
 userRouter.post('/signup',async (req, res) => {
-   const  {password} = req.body;
+   const {password} = req.body;
    console.log(password);
     try{
  const user = await userModel.findOne({ email: req.body.email});
@@ -49,7 +49,6 @@ userRouter.post('/signup',async (req, res) => {
 
 userRouter.post('/signin', async(req, res) => {
     const {email,password} = req.body;
-    console.log(email,password);
 try{
     const user = await userModel.findOne({email:email});
     console.log(user);
