@@ -6,11 +6,12 @@ const storage = multer.diskStorage({
     },
     filename: function (req, file, cb) {
         let ext = path.extname(file.originalname);
+        console.log(ext);
         let userID = req.id;
-        let hrs = new Date().getHours();
-        let mins = new Date().getMinutes();
+        // let hrs = new Date().getHours();
+        // let mins = new Date().getMinutes();
         // console.log(userID);
-        cb(null, userID+"_"+hrs+':'+mins+ext);
+        cb(null, userID+"_"+ext);
     },
     fileFilter: function (req, file, cb) {
         if (file.mimetype == "application/pdf") {

@@ -8,8 +8,8 @@ const [email, setEmail] = useState("");
 const [password, setPassword] = useState("");
 const navigate = useNavigate();
 
-const handleSignUp = async () => {
-  // e.preventDefault();
+const handleSignUp = async (e) => {
+  e.preventDefault();
   const userData = {
     name,
     email,
@@ -17,23 +17,24 @@ const handleSignUp = async () => {
   };
 
   try {
-      const res = await fetch("https://healthhub-sug1.onrender.com/user/signup", {
-        method: "POST",
+      const res = await fetch('https://healthhub-sug1.onrender.com/user/signup', {
+        method: 'POST',
         headers: {
+          'Access-Control-Allow-Origin': '*',
           "Content-Type": "application/json"
         },
-        body: JSON.stringify(userData)
+        body: userData
       });
   
-      if (res.status === 200) {
+      if (res.status == 200) {
         const data = await res.json();
         console.log(data);
-        navigate("/login");
+        navigate('/login');
       } else {
-        console.error("Error creating user:", res.statusText);
+        console.log("Error creating user:", res.statusText);
       }
     } catch (error) {
-      console.error("Error fetching token:", error);
+      console.log("Error fetching token:",error);
     }
 }
 
@@ -42,11 +43,11 @@ return (
   <div className='main-container-form-signup'>
       <div className='form-sign-up'>
           <h1 className='signup'>Create an account</h1>
-          <form className='signup'>
+          <form className='signup' onSubmit={handleSignUp}>
               <input type="text" placeholder='Name' className='form-field-signup' value={name} onChange={(e)=>setName(e.target.value)}/>
               <input type="email" placeholder='Email address' className='form-field-signup' value={email} onChange={(e)=>setEmail(e.target.value)} />
               <input type="password" placeholder='Password' className='form-field-signup' value={password} onChange={(e)=>setPassword(e.target.value)}/>
-              <button className='form-button-signup' onClick={handleSignUp}>Create Account</button>
+              <button className='form-button-signup' type="Submit">Create Account</button>
           </form>
           <div>
               <hr className='signup' />

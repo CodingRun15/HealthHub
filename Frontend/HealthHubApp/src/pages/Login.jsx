@@ -28,7 +28,7 @@ const Login = () => {
             const userRes = await fetch("https://healthhub-sug1.onrender.com/user/profile", {
                 method: "GET",
                 headers: {
-                    "Content-type": "application/json",
+                    "Content-Type": "application/json",
                     "Authorization": `Bearer ${token}`
                 }
             });

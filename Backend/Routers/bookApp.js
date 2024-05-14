@@ -12,7 +12,7 @@ const transporter = mailer.createTransport({
     pass:'X6u8nBQgn97vshnyCJ'
   }
 }) 
-appointmentRouter.post('/bookapp',auth, upload.single('file'),async(req,res)=>{
+appointmentRouter.post('/bookapp',auth,upload.single('file'),async(req,res)=>{
   try{
     const newAppData = {
       userID: req.id,
@@ -22,7 +22,7 @@ appointmentRouter.post('/bookapp',auth, upload.single('file'),async(req,res)=>{
       doctor: req.body.doctor,
       date: req.body.date,
       time: req.body.time,
-      file: req.file.path,
+      file: req.file.path, 
   };
     const newApp = new appointmentModel(newAppData);
     await newApp.save();
