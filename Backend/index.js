@@ -11,7 +11,10 @@ const app = express();
 const server = http.createServer(app);
 const io = new Server(server);
 app.use(express.json());
-app.use(cors());
+app.use(cors({origin: '*', 
+  methods: ['GET', 'POST'],  
+  allowedHeaders: ['Content-Type'], 
+  credentials: true}));              
 app.use('/user',userRouter);
 app.use('/user/appointments',appointmentRouter);
 app.get('/', (req, res) => {
