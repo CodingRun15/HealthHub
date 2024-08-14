@@ -19,7 +19,7 @@ const Login = () => {
       const res = await fetch("https://healthhub-sug1.onrender.com/user/signin", {
         method: "POST",
         headers: {
-          "Content-type": "application/json"
+          "Content-Type": "application/json"
         },
         body: JSON.stringify(form)
       });
