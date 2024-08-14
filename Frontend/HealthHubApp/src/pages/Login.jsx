@@ -13,7 +13,6 @@ const Login = () => {
   
     }
   const handleSignIn = async (e) => {
-    console.log(form);
     e.preventDefault();
     try {
       const res = await fetch("https://healthhub-sug1.onrender.com/user/signin", {
@@ -23,7 +22,7 @@ const Login = () => {
         },
         body: JSON.stringify(form)
       });
-      if(res.ok){
+      if(res.status===200){
         const data = await res.json();
         const token = data["login successful"];
         localStorage.setItem("token", token);

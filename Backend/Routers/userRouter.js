@@ -17,8 +17,7 @@ userRouter.post('/signup',async (req, res) => {
  const user = await userModel.findOne({ email: req.body.email});
 //  console.log(req.body);
  if(user){
-    console.log('user not found')
-   return res.status(400).send('User already exists. Please login');
+   return res.status(404).json({ message: 'User already exists'});
  }
    bcrypt.genSalt(5, (err, salt) => {
     bcrypt.hash(password,salt,async (err,data)=>{
@@ -34,16 +33,16 @@ userRouter.post('/signup',async (req, res) => {
          try{ 
            await newUser.save();
             console.log('userSaved');
-            return res.status(200).send('new User added');
+            return res.status(200).json({message:'new User added'});
          }
          catch(err){
-           return res.status(404).send(err);
+           return res.status(404).json({msg:err});
          }
     })
 })  
     }
     catch(err){
-        res.status(500).json({"message":err});
+        res.status(500).send({"message":err});
     }
 })
 
