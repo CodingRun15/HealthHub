@@ -3,11 +3,10 @@ import '../css/Signup.css'
 import { useState } from "react";
 
 const Signup = () => {
-  const [name, setName] = useState("");
+const [name, setName] = useState("");
 const [email, setEmail] = useState("");
 const [password, setPassword] = useState("");
 const navigate = useNavigate();
-
 const handleSignUp = async (e) => {
   e.preventDefault();
   const userData = {
@@ -20,10 +19,9 @@ const handleSignUp = async (e) => {
       const res = await fetch('https://healthhub-sug1.onrender.com/user/signup', {
         method: 'POST',
         headers: {
-          'Access-Control-Allow-Origin': '*',
           "Content-Type": "application/json"
         },
-        body: userData
+        body: JSON.stringify(userData)
       });
   
       if (res.status == 200) {
