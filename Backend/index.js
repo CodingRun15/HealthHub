@@ -7,11 +7,10 @@ const { userRouter } = require('./Routers/userRouter');
 const { appointmentRouter } = require('./Routers/bookApp');
 const app = express();
 app.use(express.json());
-app.use(cors({
-    origin: '*',
-    credentials: true,
-    allowedHeaders: '*'  // this is important for JWT authentication
-}));
+app.use(cors({origin: '*', 
+  methods: ['GET', 'POST'],  
+  allowedHeaders: ['Content-Type'], 
+  credentials: true}));              
 app.use('/user',userRouter);
 app.use('/user/appointments',appointmentRouter);
 app.get('/', (req, res) => {
