@@ -1,14 +1,19 @@
 import { Link, useNavigate } from 'react-router-dom'
 import '../css/Login.css'
 import { useState } from 'react';
-
 const Login = () => {
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
+      const [form,setForm] = useState({
+        email: "",
+        password: ""
+      });
     const [showPassword, setShowPassword] = useState(false);
     const navigate = useNavigate();
-
+    const handleChange =(e)=>{
+        setForm({...form,[e.target.name]: e.target.value})
+  
+    }
   const handleSignIn = async (e) => {
+    console.log(form);
     e.preventDefault();
     try {
       const res = await fetch("https://healthhub-sug1.onrender.com/user/signin", {
@@ -16,41 +21,24 @@ const Login = () => {
         headers: {
           "Content-type": "application/json"
         },
-        body: JSON.stringify({ email, password })
+        body: JSON.stringify(form)
       });
-  
-      if (res.ok) {
+      if(res.ok){
         const data = await res.json();
-        if (data["login successful"]) { 
-            const token = data["login successful"];
-            localStorage.setItem("token", token);
-    
-            const userRes = await fetch("https://healthhub-sug1.onrender.com/user/profile", {
-                method: "GET",
-                headers: {
-                    "Content-Type": "application/json",
-                    "Authorization": `Bearer ${token}`
-                }
-            });
-    
-            if (userRes.ok) {
-                const userData = await userRes.json();
-                localStorage.setItem("user", JSON.stringify(userData));
-                alert("You have Successfully Logged In!");
-                navigate("/");
-            } else {
-                console.error("Failed to fetch user information:", userRes.statusText);
-            }
-        } else {
-            alert("Token not found in response");
-            console.error("Token not found in response:", data);
-        }
+        const token = data["login successful"];
+        localStorage.setItem("token", token);
+        navigate("/");
+      }else{
+        console.log("Error logging in:", res.statusText);
+      }
     }
-    } catch (error) {
+         catch (error) {
       console.error("Error fetching token:", error);
     }
-    setEmail("");
-    setPassword("");
+    setForm({
+        email: "",
+        password: ""
+    })
   }
 
   const toggleShowPassword = () => {
@@ -63,8 +51,8 @@ const Login = () => {
         <div className='form-sign-in-login'>
             <h1 className='login'>Sign in</h1>
             <form className='login'>
-                <input type="email" placeholder='Email address' className='form-field-login' value={email} onChange={(e)=>setEmail(e.target.value)}/>
-                <input type={showPassword ? "text" : "password"} placeholder='Password' className='form-field-login' value={password} onChange={(e) => setPassword(e.target.value)} />
+                <input name='email' type="email" placeholder='Email address' className='form-field-login' value={form.email} onChange={handleChange}/>
+                <input name='password' type={showPassword ? "text" : "password"} placeholder='Password' className='form-field-login' value={form.password} onChange={handleChange} />
                 <p className='login'>
                 <input type="checkbox" onChange={toggleShowPassword} checked={showPassword} />Show Password
                 </p>
